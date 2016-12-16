@@ -1,0 +1,56 @@
+
+<div class="view-product">
+<div class="info-center">
+		<div class="manage-head">
+			<h6 class=" padding-left manage-head-con "><b>行业管理</b></h6>
+		</div>
+		<button id="btn" type="button" class="btn btn-primary" style="position:absolute;top:7px;right:30px">添加行业</button>
+		<script>
+			$("#btn").click(function(){
+			
+				window.location.href = '__ADMIN__SITE__/Position/add';
+				});
+		</script>
+		
+		<div style="margin-left:20px">
+				<table class="table table-hover" style="border:none;outline:medium;width:1143px">
+					<tr class="info" style="font-weight:bold;font-size:14px;">
+						<td> 编号</td>
+						<td>行业名称</td>
+						<td>创建时间</td>
+						<td></td>
+					</tr>
+					{volist name="result" id="data"}
+						<tr id="value" style="font-size:14px;">
+
+							<td><input type="checkbox" name="id" value="{$data.vid}" /></td>
+							<td>{$data.classname}</td>
+							<td>{$time = date('Y-m-d', $data['time'])}</td>
+							<td>
+								<a href="__ADMIN__SITE__/Position/edit?vid={$data.vid}">修改</a>
+								<a href="__ADMIN__SITE__/Position/del?vid={$data.vid}">删除</a>
+							</td>
+						</tr>
+					{/volist}
+				</table>
+			
+			<div style="margin-left:20px">{$result->render()}</div>
+		</div>
+		<div style="margin-left:20px">
+	</div>
+</div>
+</div>
+
+<script>
+    $(".sidebar-title").click(function() {
+        if ($(this).parent(".sidebar-nav").hasClass("sidebar-nav-fold")) {
+            $(this).next().slideDown(200);
+            $(this).parent(".sidebar-nav").removeClass("sidebar-nav-fold");
+        } else {
+            $(this).next().slideUp(200);
+            $(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
+        }
+    });
+</script>
+
+

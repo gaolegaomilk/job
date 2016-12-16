@@ -1,0 +1,188 @@
+
+        <script>
+        $(function(){
+             var chart;
+
+            var chartData = [
+
+                {
+                    "country": "70后",
+                    "visits": $("#a70").attr("values"),
+                    "color": "#FCD202"
+                },
+
+                {
+                    "country": "80后",
+                    "visits": $("#a80").attr("values"),
+                    "color": "#FF0F00"
+                },
+
+                {
+                    "country": "90后",
+                    "visits": $("#a90").attr("values"),
+                    "color": "#FF6600"
+                },
+
+                {
+                    "country": "00后",
+                    "visits": $("#a00").attr("values"),
+                    "color": "#FF9E01"
+                },
+
+                {
+                    "country": "其它",
+                    "visits": $("#nuth").attr("values"),
+                    "color": "#FCD202"
+                },
+                  {
+                    "country": "城市",
+                    "color": "#FF9E01"
+                },  
+                {
+                    "country": "北京",
+                    "visits": $("#cbeijing").attr("values"),
+                    "color": "#F8FF01"
+                },
+                {
+                    "country": "天津",
+                    "visits": $("#ctianjin").attr("values"),
+                    "color": "#B0DE09"
+                }, 
+                {
+                    "country": "保定",
+                    "visits": $("#cbaoding").attr("values"),
+                    "color": "#04D215"
+                }, 
+                {
+                    "country": "秦皇岛",
+                    "visits": $("#cqnhuangdao").attr("values"),
+                    "color": "#0D8ECF"
+                },  
+                {
+                    "country": "唐山",
+                    "visits": $("#ctangshan").attr("values"),
+                    "color": "#0D52D1"
+                }, 
+                {
+                    "country": "张家口",
+                    "visits": $("#czhangjiakou").attr("values"),
+                    "color": "#2A0CD0"
+                },
+                  {
+                    "country": "承德",
+                    "visits": $("#cchengde").attr("values"),
+                    "color": "#8A0CCF"
+                },
+                  {
+                    "country": "沧州",
+                    "visits": $("#ccangzhou").attr("values"),
+                    "color": "#CD0D74"
+                }
+            ];
+
+
+           AmCharts.ready(function () {
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+                chart.dataProvider = chartData;
+                chart.categoryField = "country";
+                chart.startDuration = 1;
+                chart.depth3D = 50;
+                chart.angle = 30;
+                chart.marginRight = -45;
+
+                // AXES
+                // category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.gridAlpha = 0;
+                categoryAxis.axisAlpha = 0;
+                categoryAxis.gridPosition = "start";
+
+                // value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.axisAlpha = 0;
+                valueAxis.gridAlpha = 0;
+                chart.addValueAxis(valueAxis);
+
+                // GRAPH
+                var graph = new AmCharts.AmGraph();
+                graph.valueField = "visits";
+                graph.colorField = "color";
+                graph.balloonText = "<b>[[category]]: [[value]]</b>";
+                graph.type = "column";
+                graph.lineAlpha = 0.5;
+                graph.lineColor = "#FFFFFF";
+                graph.topRadius = 1;
+                graph.fillAlphas = 0.9;
+                chart.addGraph(graph);
+
+                // CURSOR
+                var chartCursor = new AmCharts.ChartCursor();
+                chartCursor.cursorAlpha = 0;
+                chartCursor.zoomable = false;
+                chartCursor.categoryBalloonEnabled = false;
+                chartCursor.valueLineEnabled = true;
+                chartCursor.valueLineBalloonEnabled = true;
+                chartCursor.valueLineAlpha = 1;
+                chart.addChartCursor(chartCursor);
+
+                chart.creditsPosition = "top-right";
+
+                // WRITE
+                chart.write("chartdiv");
+
+            });
+
+        });
+           
+        </script>
+        <div class="view-product">
+        <div style="text-align:center;font-size:50px;margin-bottom:20px">JOB 大数据</div>
+        <div style="position:absolute; width:200px;margin-left:880px">
+            <tr><td><b>注意：</b></td></tr><br />
+            <div style="margin-left:20px">
+                <tr><td>1、单位 : 人数/个</td></tr><br >
+                <tr><td>2、70~其它为普通用户数据</td></tr><br >
+                <tr><td>3、城市之后为公司所在地及数量</td></tr><br >
+            </div>
+         
+        </div>
+        <div  style="position:absolute;top:300px;left:100px;">
+            <!--     <tr style="height:24px"><td><span style="display:inline-block;width:10px;height:10px;border-radius:2.5px;background:#FF6600"></span>afasfa</td></tr><br />
+                <tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2.5px;background:#FF0F00"></span>afasfa</td></tr><br />
+                <tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2.5px;background:#FF0F00"></span>afasfa</td></tr><br />
+                <tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2.5px;background:#FF0F00"></span>afasfa</td></tr><br />
+                <tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2.5px;background:#FF0F00"></span>afasfa</td></tr><br />
+                <tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2.5px;background:#FF0F00"></span>afasfa</td></tr><br />
+                <tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2.5px;background:#FF0F00"></span>afasfa</td></tr><br />
+                <tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2.5px;background:#FF0F00"></span>afasfa</td></tr><br /> -->
+            </div>
+            <div id="a80" values="{$a80}"></div>
+            <div id="a90" values="{$a90}"></div>
+            <div id="a70" values="{$a70}"></div>
+            <div id="a00" values="{$a00}"></div>
+            <div id="nuth" values="{$nuth}"></div>
+            <div id="cbeijing" values="{$cbeijing}"></div>
+            <div id="ctianjin" values="{$ctianjin}"></div>
+            <div id="cbaoding" values="{$cbaoding}"></div>
+            <div id="cqinhuangdao" values="{$cqinhuangdao}"></div>
+            <div id="ctangshan" values="{$ctangshan}"></div>
+            <div id="czhangjiakou" values="{$czhangjiakou}"></div>
+            <div id="cchengde" values="{$cchengde}"></div>
+            <div id="ccangzhou" values="{$ccangzhou}"></div>
+            <div id="chartdiv" style="margin:0 auto ;width: 800px; height: 400px;">
+            </div>
+            <div style="text-align:center;margin:20 auto 0 auto;font-size:16px">站点统计表__ <span>总数:{$a80+$a90+$a00+$a70+$nuth}</span></div>
+        </div>
+
+<script>
+    $(".sidebar-title").click(function() {
+        if ($(this).parent(".sidebar-nav").hasClass("sidebar-nav-fold")) {
+            $(this).next().slideDown(200);
+            $(this).parent(".sidebar-nav").removeClass("sidebar-nav-fold");
+        } else {
+            $(this).next().slideUp(200);
+            $(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
+        }
+    });
+</script>

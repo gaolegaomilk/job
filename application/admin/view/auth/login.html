@@ -1,0 +1,93 @@
+{__NOLAYOUT__}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="__ADMIN__STATIC__/js/jquery-1.11.3.js"></script>
+	<link rel="stylesheet" href="__ADMIN__STATIC__/css/layout.css">
+	<link rel="stylesheet" href="__ADMIN__STATIC__/css/login.css">
+</head>
+
+<body class="login-bg">
+	<div class="main ">
+		<!--登录-->
+		<div class="login-dom login-max">
+			<div class="logo text-center">
+				<a href="#">
+					<img src="__ADMIN__STATIC__/Image/logo.png" width="180px" height="180px">
+				</a>
+			</div>
+			<div class="login container " id="login">
+				<p class="text-big text-center logo-color">
+					同一个账号，连接一切
+				</p>
+				<p class=" text-center margin-small-top logo-color text-small">
+					控制台 | 云平台 | 论坛 | 云市场
+				</p>
+						
+					<div class="login-box border text-small" id="box">
+						<div class="name border-bottom">
+							<input type="text" placeholder="手机 / 邮箱 / 某某账号" id="username" name="username" datatype="*" nullmsg="请填写帐号信息">
+						</div>
+						<div class="pwd">
+							<input type="password" placeholder="密码" datatype="*" id="password" name="password" nullmsg="请填写帐号密码">
+						</div>
+					</div>
+					<!-- <input type="hidden" name="formhash" value="5abb5d21"/> -->
+					<input type="submit" id="btn" class="btn text-center login-btn" value="立即登录">
+				
+				
+				<div class="forget">
+					<a href="repassword.html" class="forget-pwd text-small fl">忘记登录密码？</a><a href="register.html" class="
+					-new text-small fr" id="forget-new">创建一个新账号</a>
+				</div>
+			</div>
+		</div>
+			<div id="span" style="position:absolute;top:390px;left:850px;"></div>
+		<div class="footer text-center text-small ie">
+			Copyright 2013-2016 某某科技科技有限公司 版权所有 <a href="#" target="_blank">滇ICP备13005806号</a>
+			<span class="margin-left margin-right">|</span>
+		</div>
+		<div class="popupDom">
+			<div class="popup text-default">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			function checkUsername(){
+				$.post('__ADMIN__SITE__/Auth/dolog',{email: $("#username").val()}, function(data){
+					if(data.status){
+						$("#span").html('<img src="__ADMIN__STATIC__/Image/action_check.png" style="margin-top:2px;" /><font style="color:#77CB18"><b>用户名输入成功</b></font>');
+					} else {
+						$("#span").html('<font style="color:red"><img src="__ADMIN__STATIC__/Image/action_delete.png" alt="" /><b>用户名不存在</b></font>');
+					}
+				},'json');
+			}
+			$("#username").blur(function(){
+				checkUsername();
+			});
+			$("#btn").click(function(){
+				// alert(1);
+				$.post('__ADMIN__SITE__/auth/checklog',{email: $("#username").val(), password: $("#password").val()}, function(data){
+					if(data.status){
+						// alert(data.status);
+						// alert(data.status);
+						//console.log(data.msg);
+						//alert(data.msg);
+						
+						location.href = '__ADMIN__SITE__/Index/index';
+					}else{
+						alert(data.msg);
+						location.href = '__INDEX__/Index/index';
+					}
+				},'json');
+			});
+
+		});
+
+		
+
+	</script>
+</body>
+</html>

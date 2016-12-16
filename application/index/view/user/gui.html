@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <title>我的申请列表</title> 
+  <script type="text/javascript" src="js/require.js"></script> 
+  <!--引用静态文件:skin_default--> 
+  <link href="__STATIC__/css/common.css" rel="stylesheet" type="text/css" />
+  <link href="__STATIC__/css/templateform.css" rel="stylesheet" type="text/css" />
+  <link href="__STATIC__/css/controls.css" rel="stylesheet" type="text/css" />
+  <link href="__STATIC__/css/default.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/base_new.js"></script>
+  <script type="text/javascript" src="js/widgetnew.js?v=3"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  <script type="text/javascript" src="js/bsdialog.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  <script type="text/javascript" src="js/controls.js"></script>
+  <script type="text/javascript" src="js/underscore.js"></script>
+  <script type="text/javascript" src="js/school-select-v2.js?v=6"></script>
+  <link href="__STATIC__/css/school-select-v2.css" rel="stylesheet" type="text/css" /> 
+  <!--引用静态文件:skin_new_css--> 
+  <link href="__STATIC__/css/main.css" rel="stylesheet" type="text/css" /> 
+  <!--引用静态文件:new_dialog_js--> 
+  <script type="text/javascript" src="js/dialog_js.js"></script> 
+  <!--产品头部CSS和脚本--> 
+  <script src="js/WdatePicker.js"></script> 
+  <!--引用静态文件:front_css--> 
+  <link href="__STATIC__/css/front.css" rel="stylesheet" type="text/css" />  
+  <style type="text/css">
+          .checkbox_list {float: left;width: 450px;}
+          .form_container ul li span.start_date {width: 80px;}
+          .form_container ul li span.end_date {width: 70px;}
+          .dl_logo img {
+              width: auto!important;
+              height: 40px!important;
+              margin: 16px 0 0 30px!important;
+            }
+           body{background-image:url(__STATIC__/images/dd.jpg);}
+    </style> 
+
+
+  <link rel="stylesheet" href="__STATIC__/admin/css/bootstrap.css" />
+
+ </head> 
+ <body> 
+  <div class="bs_deliver"> 
+   <div class="dl_header_border"> 
+    <div class="dl_header clearfix"> 
+     <div class="dl_logo"> 
+      <img id="logoImg" class="header-logo-img" src="images/104003_medias_20141215_20141215logo.jpg?v=635542641034400000" style="width: 300px;height:80px;display: none;" /> 
+     </div> 
+     <div class="dl_rightit"> 
+      <div class="isApplyDetail" style="display:none"> 
+       <div class="isLogin" style="display:none"> 
+        <span id="topUserEmail" class="pad3" title=""><span class="userShortName"></span>，欢迎您！</span> 
+        <span class="pad3"><a href="__STATIC__/index.html">招聘首页</a></span> 
+        <em class="dl_header_line dl_padtb05">|</em> 
+        <span class="isUserCenter" style="display:none"> <span class="pad3"><a href="__STATIC__/member_apply.html">个人中心</a></span> <em class="dl_header_line dl_padtb05">|</em> </span> 
+        <span class="pad3"><a href="__STATIC__//Portal/Account/Logout">退出</a></span> 
+       </div> 
+       <div class="unLogin" style="display:none"> 
+        <span class="pad3"><a href="__STATIC__/index.html">招聘首页</a></span> 
+        <em class="dl_header_line dl_padtb05">|</em> 
+        <span class="pad3"><a href="__STATIC__//Portal/Account/Login">登录</a></span> 
+        <em class="dl_header_line dl_padtb05">|</em> 
+        <span class="pad3"><a href="__STATIC__//Portal/Account/Register">注册</a></span> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="dl_content dl_gray_bg"> 
+    <!----> 
+    <style type="text/css">
+        .dl_dialog_wrap span.new_pop_error {
+            background: none;
+            padding-left: 0px;
+            color: #F17F7F;
+            font-size: 12px;
+            width: 260px;
+        }
+        .wish_container {
+            width: 400px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-top: 10px;
+        }
+
+            .wish_container span.wish_err {
+                margin-left: 130px;
+            }
+        .tit {
+            width: 100px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            padding-top: 10px;
+        }
+        .wish_container tr td select {
+            width: 150px;
+        }
+        .wish_ct {
+            max-height: 130px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .dl_listposition .detail li {
+            width: 144px;
+        }
+
+            .dl_listposition .detail li.testResult {
+                width: 250px;
+            }
+
+            .dl_listposition .detail li a {
+                padding-right: 5px;
+            }
+
+            .dl_listposition .detail li span {
+                padding-right: 5px;
+            }
+    </style> 
+    <div class="dl_bigwrap dl_gray_bg clearfix"> 
+     <div class="leftmenu" style="width:180px"> 
+      <div class="dl_greyline_bg"> 
+       <span class="">企业中心</span> 
+      </div> 
+      <ul class="dl_menulist clearfix"> 
+       <li> <a href="__SITE__/index/user/info" class="shoucang">填写企业资料</a></li> 
+       <li> <a href="__SITE__/index/user/upcompany" class="shoucang">修改企业资料</a> </li>
+       <li> <a href="__SITE__/index/user/posinfo" class="shoucang">发布招聘信息</a></li>
+       <li> <a href="__SITE__/index/user/password" class="shoucang">修改密码</a></li>
+        <li> <a href="__SITE__/index/user/custome" class="shoucang">修改图像</a></li>
+       <li> <a href="__SITE__/index/user/coume" class="shoucang">查看简历</a></li>
+       <li> <a href="__SITE__/index/user/resumecom" class="shoucang">查看企业资料</a></li>
+       <li> <a href="__SITE__/index/user/position" class="shoucang">已发职位</a></li>
+       <li> <a href="__SITE__/index/index" class="shoucang">返回首页</a> </li>
+      </ul> 
+     </div> 
+     <div class="rightcontent" style="width:730px;height:800px;"> 
+      <h3 class="dl_bigtit"><span class="dl_postit" >规格
+      <li class="result"> </li> 
+      <div class="dl_mgtop20"> 
+       <div class="dl_greyline_bg"> 
+        <span class=""></span> 
+       </div> 
+      </div> 
+      <div class="dl_listposition dl_mgtop10"> 
+       <ul class="detail clearfix" style=""> 
+          <li style="width:700px;font-size: 14px;font-weight:none;" ><h3>企业名称申请登记的原则:</h3></li> 
+          <li style="width:700px;color:black;font-size: 14px;" >1、有损于国家、社会公共利益的；</li> 
+          <li style="width:700px;color:black;font-size: 14px;font-weight:none;" >2、可能对公众造成欺骗或者误解的；</li>
+         <li style="width:700px;color:black;font-size: 14px;font-weight:none;" >3、外国国家(地区)名称、国际组织名称；</li> 
+        <li style="width:700px;color:black;font-size: 14px;font-weight:none;" >政党名称、党政军机关名称、群众组织名称、社会团体名称及部队番号</li>
+          <li style="width:700px;color:black;font-size: 14px;font-weight:none;" >4、[立法宗旨]* 为了规范公司的组织和行为，保护公司、股东和债权人的合法权益，维护社会经济秩序，促进社会主义市场经济的发展，制定本法。</li>
+         <li style="width:700px;color:black;font-size: 14px;font-weight:none;" >5、[调整对象]本法所称公司是指依照本法在中国境内设立的有限责任公司和股份有限公司。</li>
+          <li style="width:700px;color:black;font-size: 14px;font-weight:none;" >6、[法人财产权及股东责任]公司是企业法人，有独立的法人财产，享有法人财产权。公司以其全部财产对公司的债务承担责任。</li>
+         <li style="width:700px;color:black;font-size: 14px;font-weight:none;" >7、[公司登记] 设立公司，应当依法向公司登记机关申请设立登记。符合本法规定的设立条件的，由公司登记机关分别登记为有限责任公司或者股份有限公司；不符合本法规定的设立条件的，不得登记为有限责任公司或者股份有限公司。</li>
+          <li style="width:700px;color:black;font-size: 14px;font-weight:none;" >8、公司营业执照应当载明公司的名称、住所、注册资本、经营范围、法定代表人姓名等事项。[4]
+        公司营业执照记载的事项发生变更的，公司应当依法办理变更登记，由公司登记机关换发营业执照。</li>
+      </ul>
+      </div> 
+      <!-- 修改校招志愿 --> 
+      <div class="tableNew" name="editform" style="display: none;"> 
+       <div style="margin-bottom: 15px;">
+        <span class="dl_postit">修改校招志愿</span>
+       </div> 
+       <div class="wish_ct"> 
+        <table class="wish_container"> 
+        </table> 
+       </div> 
+       <div class="wish_container">
+        <span name="wishError" class="new_pop_error wish_err" style="display: none;"></span>
+       </div> 
+       <div class="wish_container">
+        <span class="position dl_ft12_grey">注：请按照从第一志愿开始的顺序修改志愿，例：若只有两个志愿，那只能选择一个为第一志愿，一个为第二志愿</span>
+       </div> 
+      </div> 
+      <div class="dl_bd_btm dl_padt15" style="border-bottom: none;"></div> 
+      <div class="dl_more blue dl_ft14">
+      
+      </div> 
+      <input id="proId" type="hidden" /> 
+     </div> 
+    </div> 
+    <!--简历内容 e--> 
+   </div> 
+   <div class="dl_footer"> 
+    <p>&copy;2015&nbsp;北京大生知行科技有限公司51talk&nbsp;&nbsp;京ICP备05051632号 京公网安备110108002767号 &nbsp;&nbsp;帮助热线：4006506886</p> 
+   </div> 
+  </div>  
+  <script language="javascript" type="text/javascript" src="js/json2.js"></script> 
+ </body>
+</html>

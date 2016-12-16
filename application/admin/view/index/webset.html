@@ -1,0 +1,119 @@
+
+
+	
+
+<div class="view-product">
+	<div class="info-center">
+		<div class="manage-head " >
+			<h6 class=" padding-left manage-head-con "><b>站点管理</b></h6>
+		</div>
+		<div style="margin-left:20px">
+				<table class="table table-hover" style="border:none;outline:medium;width:1143px">
+					<tr class="info" style="font-weight:bold;font-size:14px;color:;">
+						<td></td>
+						<td>站点名称</td>
+						<td>域名</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr style="font-size:14px">
+						<td></td>
+						<td>goodjob</td>
+						<td>www.goodjob.com</td>						
+						{if $result['web'] == 1}
+							<td>当前状态：&nbsp;<button id="btn" type="button" class="btn btn-primary">关闭</button></td>
+						{else}
+							<td>当前状态：&nbsp;<button id="btn" type="button"  class="btn btn-primary">开启</button></td>
+						{/if}
+						<td style="width:300px">当前状态与按钮显示相反</td>
+						<td style="width:300px"></td>
+					</tr>		
+				</table>
+			
+		</div>
+	</div>
+
+
+	<div class="info-center">
+		<div class="manage-head">
+			<h6 class=" padding-left manage-head-con "><b>用户数量</b></h6>
+		</div>
+		<div style="margin-left:20px">
+			
+				<table class="table table-hover" style="border:none;outline:medium;width:1143px">
+					<tr class="info" style="font-weight:bold;font-size:14px">
+						<td></td>
+						<td>70后</td>
+						<td>80后</td>
+						<td>90后</td>
+						<td>其他</td>
+						<td></td>
+					</tr>
+					<tr style="font-size:14px;">
+						<td>数量</td>
+						<td>{$a70}</td>
+						<td>{$a80}</td>
+						<td>{$a90}</td>
+						<td>{$nuth}</td>
+						<td>单位:人</td>
+					</tr>
+				</table>
+			<div style="margin-left:;position:absolute;top:176px;left:1046px;"><b>总人数:</b><button type="button" class="btn btn-link">{$a80+$a70+$a90+$nuth}</button></div>
+		</div>
+	</div>
+	<div class="info-center">
+		<div class="manage-head">
+			<h6 class=" padding-left manage-head-con "><b>企业用户数量</b></h6>
+		</div>
+		<div style="margin-left:20px">
+			
+				<table class="table table-hover" style="border:none;outline:medium;width:1143px">
+					<tr class="info" style="font-weight:bold;font-size:14px">
+						<td></td>
+						<td>北京市</td>
+						<td>天津市</td>
+						<td>保定市</td>
+						<td>其它</td>
+						<td></td>
+					</tr>
+					<tr style="font-size:14px;">
+						<td>数量</td>
+						<td>{$cbeijing}</td>
+						<td>{$ctianjin}</td>
+						<td>{$cbaoding}</td>
+						<td>{$cnuth}</td>
+						<td>单位:人</td>
+					</tr>
+				</table>
+			<div style="margin-left:;position:absolute;top:326px;left:1046px;"><b>总数:</b><button type="button" class="btn btn-link">{$cbeijing+$ctianjin+$cbaoding+$cnuth}</button></div>
+		</div>
+	</div>
+</div>
+<script>
+$(function(){
+	$("#btn").click(function(){
+		//alert($("#btn").text());
+		// var btn = $("#btn");
+		$.post('web',{'button':$("#btn").text()},function(data){
+			if(data.status){
+				// alert(data.msg);
+				$("#btn").html(data.msg);
+			}else{
+				$("#btn").html(data.msg);		
+			}
+		},'json');
+	});
+});
+</script>
+<script>
+	$(".sidebar-title").click(function() {
+		if ($(this).parent(".sidebar-nav").hasClass("sidebar-nav-fold")) {
+			$(this).next().slideDown(200);
+			$(this).parent(".sidebar-nav").removeClass("sidebar-nav-fold");
+		} else {
+			$(this).next().slideUp(200);
+			$(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
+		}
+	});
+</script>

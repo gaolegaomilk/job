@@ -1,0 +1,69 @@
+
+<div class="view-product background-color">
+  <div class="padding-big background-color">
+  <div class="manage-head">
+    <h1 class=" padding-left manage-head-con ">用户信息管理</h1>
+  </div>
+     <div class="dl_bacwrap dl_new_error_wrap"> 
+      <div class="mainwrap"> 
+       <br /> 
+       <h3 class="dl_bigtit"> <span class="dl_postit">公司信息</span> <span class="dl_padl20"></span> </h3> 
+       <br /> 
+       <form method="post" class="formPart" enctype="multipart/form-data" action="__ADMIN__SITE__/User/bupdate"> 
+        <div class="clearfix"> 
+         <div class="dl_myleftform"> 
+          <div class="form_container" id="RecruitmentPortal.PersonProfile"> 
+           <div class="form_part"> 
+            <div class="form_part_container columnone"> 
+             <ul> 
+           
+              <li><input type="hidden" name="id" value="{$cinfo['uid']}"></li>
+              <li><label class="current label_required">公司名称：{$cinfo['name']}</label> 
+              <input  type="text" name="name"  value=""/></li> 
+              
+              <li><label class="current label_required">法人代表：{$cinfo['contactor']}</label> 
+              <!-- <label class="current label_required">性别：</label> -->
+              <input type="text" name="contactor" value=""/> </li>
+              <li><label class="current label_required">联系方式：{$cinfo['phone']}</label> 
+              <input type="text" name="phone" value="" /></li> 
+              <li><label class="current label_required">所属行业：{$voca}</label> 
+              <input type="text" name="category" value="" /></li>
+              <li><label class="current label_required">公司地址：{$str}</label> 
+              <input type="text" name="address" value="" /></li>
+              <li><label class="current label_required">辛路历程：</label> 
+              <textarea name="history" cols="40" rows="41" wrap="VIRTUAL" style="border:none;width:600px;height:200px"> 
+				        {$cinfo['history']}</textarea>
+             </li>
+             </ul> 
+            </div> 
+           </div> 
+           {if empty($cinfo['picture'])}
+           <div style="width:120px;height:180px;position:absolute;top:128px;left:476px;">
+            
+              <img src="__STATIC__/images/upfile.jpg" style="width:120px;height:120px;border-radius:50px" alt="">
+              <span style="display:inline-block;margin-top:20px;margin-left:14px">该用户还没有头像</span>
+              </div>
+            {else}
+            <div style="width:120px;height:180px;position:absolute;top:128px;left:476px;">
+              <img src="__INDEX__/uploads/{$cinfo['picture']}" style="width:120px;height:120px;border-radius:50px" alt="">
+            <span style="display:inline-block;margin-top:20px;margin-left:33px">该用户头像</span>
+
+         </div>
+         {/if}
+          </div> 
+         </div> 
+        </div> 
+       <div class="dl_subbtn dl_htline32"> 
+       <input style="width:70px;height:35px;background:#2A94DE; color:white;" type="submit" value="加入黑名单" />
+       </div> </form>
+       <div style="width:70px;height:35px;background:#2A94DE; line-height:35px;text-align:center; position:absolute;bottom:30px;left:366px;" class="dl_subbtn dl_htline32">
+        <a style="color:white;" href="__ADMIN__SITE__/index/identify">返回上一步</a>
+       </div>
+        
+       <div class="error_show" style="text-align:center;padding-top:10px;display:none">
+        <span class="new_pop_error" style="width:auto;font-weight:bold">部分内容未填写完整，请完善。</span>
+       </div> 
+      </div> 
+     </div> 
+  </div>
+</div>

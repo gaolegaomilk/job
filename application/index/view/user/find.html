@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <title>我的简历</title> 
+  <!--通用样式Css和脚本--> 
+  <!--引用静态文件:requirejs--> 
+  <script type="text/javascript" src="__STATIC__/js/require.js"></script> 
+  <!--引用静态文件:skin_default--> 
+  <link href="__STAFcss/common.css" rel="stylesheet" type="text/css" />
+  <link href="__STATIC__/css/templateform.css" rel="stylesheet" type="text/css" />
+  <link href="__STATIC__/css/controls.css" rel="stylesheet" type="text/css" />
+  <link href="__STATIC__/css/default.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="__STATIC__/js/base_new.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/widgetnew.js?v=3"></script>
+  <script type="text/javascript" src="__STATIC__/js/common.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/bsdialog.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/common.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/controls.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/underscore.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/school-select-v2.js?v=6"></script>
+  <link href="__STATIC__/css/school-select-v2.css" rel="stylesheet" type="text/css" /> 
+  <!--引用静态文件:skin_new_css--> 
+  <link href="__STATIC__/css/main.css" rel="stylesheet" type="text/css" /> 
+  <!--引用静态文件:new_dialog_js--> 
+  <script type="text/javascript" src="__STATIC__/js/dialog_js.js"></script> 
+  <!--产品头部CSS和脚本--> 
+  <script src="__STATIC__/js/WdatePicker.js"></script> 
+  <!--引用静态文件:front_css--> 
+  <link href="__STATIC__/css/front.css" rel="stylesheet" type="text/css" />  
+  <style type="text/css">
+          .checkbox_list {float: left;width: 450px;}
+          .form_container ul li span.start_date {width: 80px;}
+          .form_container ul li span.end_date {width: 70px;}
+          .dl_logo img {
+              width: auto!important;
+              height: 40px!important;
+              margin: 16px 0 0 30px!important;
+            }
+           body{background-image:url(__STATIC__/images/dd.jpg);}     
+    </style> 
+ </head> 
+ <body> 
+  <div class="bs_deliver"> 
+   <div class="dl_header_border"> 
+    <div class="dl_header clearfix"> 
+     <div class="dl_logo"> 
+      <img id="logoImg" class="header-logo-img" src="__STATIC__/images/104003_medias_20141215_20141215logo.jpg?v=635542641034400000" style="width: 300px;height:80px;display: none;" /> 
+     </div> 
+     <div class="dl_rightit"> 
+      <div class="isApplyDetail" style="display:none"> 
+       <div class="isLogin" style="display:none"> 
+        <span id="topUserEmail" class="pad3" title=""><span class="userShortName"></span>，欢迎您！</span> 
+        <span class="pad3"><a href="__STATIC__/index.html">招聘首页</a></span> 
+        <em class="dl_header_line dl_padtb05">|</em> 
+        <span class="isUserCenter" style="display:none"> <span class="pad3"><a href="__STATIC__/member_apply.html">个人中心</a></span> <em class="dl_header_line dl_padtb05">|</em> </span> 
+        <span class="pad3"><a href="__STATIC__/Portal/Account/Logout">退出</a></span> 
+       </div> 
+       <div class="unLogin" style="display:none"> 
+        <span class="pad3"><a href="__STATIC__/index.html">招聘首页</a></span> 
+        <em class="dl_header_line dl_padtb05">|</em> 
+        <span class="pad3"><a href="__STATIC__//Portal/Account/Login">登录</a></span> 
+        <em class="dl_header_line dl_padtb05">|</em> 
+        <span class="pad3"><a href="__STATIC__//Portal/Account/Register">注册</a></span> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="dl_content dl_gray_bg"> 
+    <!----> 
+    <!--申请职位 s--> 
+    <!--申请职位 e--> 
+    <!--我的简历 s--> 
+    <!--简历内容 s--> 
+    <div class="dl_bigwrap dl_heightagain clearfix dl_grey_bc" style=""> 
+     <div class="leftmenu"> 
+      <div class="dl_greyline_bg"> 
+       <span class="dl_menutit">个人中心</span> 
+      </div> 
+      <ul class="dl_menulist clearfix"> 
+       <ul class="dl_menulist clearfix"> 
+        <li> <a href="__SITE__/index/user/profile" class="apply">填写规则</a> </li> 
+        <li> <a href="__SITE__/index/user/resume" class="apply">填写个人简历</a> </li> 
+        <li> <a href="__SITE__/index/user/upresume" class="apply">修改个人简历</a> </li> 
+       <li> <a href="__SITE__/index/user/count" class="shoucang">修改密码</a></li>
+       <li> <a href="__SITE__/index/user/picture" class="shoucang">修改图像</a></li>
+       <li> <a href="__SITE__/index/index" class="shoucang">返回首页</a> </li>
+       </ul> 
+      </ul> 
+     </div> 
+     <div class="rightcontent dl_height1 dl_new_error_wrap" style="height:800px;"> 
+      <style type="text/css">
+    *html .dl_myleftform .form_container {
+        width: 490px;
+        overflow: hidden;
+    }
+
+        *html .dl_myleftform .form_container .form_part .columntwo ul {
+            width: 360px;
+            overflow: hidden;
+        }
+
+        *html .dl_myleftform .form_container ul li {
+            width: 360px;
+            overflow: hidden;
+        }
+            /* .dl_myleftform .form_container li label{width: 100px}*/
+            *html .dl_myleftform .form_container ul li span.preview_text {
+                width: 220px;
+                overflow: hidden;
+            }
+
+    .form_container li textarea {
+        border: 1px solid #c1d5df;
+        float: left;
+        height: 100px;
+        margin-right: 5px;
+        padding: 3px;
+        width: 300px;
+    }
+</style> 
+      <div class="dl_basicinfo"> 
+       <div class="dl_greyline_bg">
+        <span class="dl_menutit ">个人信息</span>
+       </div> 
+       <div class="dl_basicborder mainContainer" style="border-bottom:none"> 
+        <form method="post" id="cd7c7714-b39a-43a0-9c7e-f7382f04f5cd" name="cd7c7714-b39a-43a0-9c7e-f7382f04f5cd" enctype="multipart/form-data" action="/Portal/Resume/ResumeItem"> 
+         <div class="clearfix"> 
+          <div id="resumeitems" name="singleedit" class="dl_myleftform" style="display:none;;"> 
+           <input type="hidden" name="oId" id="Hidden1" value="a4fc2e74-0cd1-4163-a4a1-57112d95fcfc" /> 
+           <input type="hidden" name="jId" id="Hidden4" value="-1" /> 
+           <input type="hidden" name="mId" id="Hidden5" value="0" /> 
+           <input name="_objectDataID" type="hidden" value="NDc0NjFhMzktMTg2My00YzM3LTlmOTgtY2ZkN2UyOTFlNmQ0JGE0ZmMyZTc0LTBjZDEtNDE2My1hNGExLTU3MTEyZDk1ZmNmYw==" />
+           <input name="_metaObjID" type="hidden" value="NDc0NjFhMzktMTg2My00YzM3LTlmOTgtY2ZkN2UyOTFlNmQ0" />
+           <input name="_viewName" type="hidden" value="UGVyc29uUHJvZmlsZVZpZXc=" />
+           <input name="_version" type="hidden" value="MjAxMzA3MDQwNDQ4NDUzNzIx" />
+           <input name="_formIndex" type="hidden" value="1" />
+           <div class="form_container" id="RecruitmentPortal.PersonProfile"> 
+            <h2 class="form_title"> <strong>个人信息</strong> <span class="tab"></span> </h2> 
+            <div class="form_part"> 
+             <div class="form_part_container columnone"> 
+             </div> 
+             <div class="clear"></div> 
+            </div> 
+            <div class="form_part"> 
+             <div class="form_part_container columntwo"> 
+             </div> 
+             <div class="clear"></div> 
+            </div> 
+            <div class="form_part"> 
+             <div class="form_part_container columnone"> 
+             </div> 
+             <div class="clear"></div> 
+            </div> 
+           </div> 
+          </div> 
+          <div name="singleview" class="dl_myleftform" style=""> 
+           <div class="form_container" id="RecruitmentPortal.PersonProfile"> 
+            <h2 class="form_title"> <strong>个人信息</strong> <span class="tab"></span> </h2> 
+            <div class="form_part"> 
+            {foreach $personinfo as $person}
+              {if $person['user_id'] == $uid}
+             <div class="form_part_container columnone"> 
+              <ul> 
+                  <li>
+                   <label style="font-size: 14px;"><b>姓名:</b></label>
+                    <span style="width:300px;margin-left: 20px;">{$person['realname']}</span>
+                  </li>
+              </ul> 
+                  {if empty($person['picture'])}
+                  <div style="width:150px;height:150px;position:absolute;top:170px;left:850px;"> 
+                  <img src="__STATIC__/images/upfile.jpg" style="width:150px;height:150px;border-radius:70px;" alt="" />
+                  </div>
+                 {else}
+                 <div style="width:150px;height:150px;position:absolute;top:170px;left:850px;">
+                 <img src="__STATI__/uploads/{$person['picture']}" style="width:150px;height:150px;border-radius:70px;" alt="" />
+                  </div>
+                  {/if}   
+                  <ul> 
+                  {if $person['sex'] == 1}
+                  <li>
+                    <label style="font-size: 14px;"><b>性别:</b></label>
+                    <span style="width:300px;margin-left: 20px;">男</span>
+                  </li>
+                  {/if}
+                  {if $person['sex'] == 0}
+                    <li>
+                    <label style="font-size: 14px;"><b>性别:</b></label>
+                    <span style="width:300px;margin-left: 20px;">女</span>
+                   </li>
+                   {/if}       
+                </ul> 
+                <ul> 
+                  <li>
+                    <label style="font-size: 14px;"><b>出生日期:</b></label>
+                    <span style="width:300px;margin-left: 20px;">{$person['birthday']}</span>
+                  </li>
+                </ul>
+                 <ul> 
+                  <li>
+                   <label style="font-size: 14px;"><b>学历:</b></label>
+                    <span style="width:300px;margin-left: 20px;">{$person['ed_ground']}</span>
+                  </li>
+                </ul>
+                <ul> 
+                  <li>
+                     <label style="font-size: 14px;"><b>工作年限:</b></label>
+                    <span style="width:300px;margin-left: 20px;">{$person['work_year']}</span>
+                  </li>
+                </ul>
+                <ul> 
+                  <li>
+                     <label style="font-size: 14px;"><b>E-mail:</b></label>
+                    <span style="width:300px;margin-left: 20px;">{$person['e_mail']}</span>
+                  </li>
+                </ul>  
+                <ul> 
+                  <li style="font-size: 14px;">
+                    <label style="width:70px;"><b>工作经验:</label>
+                    <span style="width:620px;margin-left: 10px;margin-top: 10px;">{$person['experience']}</span>
+                  </li>
+                </ul>
+             </div>
+              {/if}
+             {/foreach} 
+             <div class="clear"></div> 
+            </div> 
+           </div> 
+          </div> 
+        <input type="hidden" class="viewName" value="201307040448453721" /> 
+       </div> 
+      </div> 
+      <style type="text/css">
+</style> 
+       <div class="dl_basicborder" style="width:"> 
+     
+         <div class="eduhistory_drmmbnew pos_realitive"> 
+          <div id="resumeitems" class="eduinfo rightcontent_edrmmb"> 
+           <input type="hidden" name="oId" id="Hidden7" value="30d193ad-9915-4786-8d84-8191f9bc6c89" /> 
+           <input type="hidden" name="jId" id="Hidden8" value="-1" /> 
+           <input type="hidden" name="mId" id="Hidden9" value="6" /> 
+           <div class="form_container" id="RecruitmentPortal.Experience"> 
+            <h2 class="form_title">  <span class="tab">&nbsp;&nbsp;1111</span> </h2> 
+            <div class="form_part"> 
+             <div class="clear"></div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="dl_borderdashed" style="border-bottom: none;"></div> 
+       </div> 
+       <input type="hidden" class="viewName" value="201307040448456801" />  
+      </div> 
+      <div class="dl_educationwrap mainContainer" style="padding: 0px 20px;"> 
+       
+       <div class="dl_basicborder" style="display: block;"> 
+         <div class="eduhistory_drmmbnew pos_realitive"> 
+          <div id="resumeitems" class="eduinfo rightcontent_edrmmb"> 
+           <input type="hidden" name="oId" id="oId" value="" /> 
+           <input type="hidden" name="jId" id="jId" value="-1" /> 
+           <input type="hidden" name="mId" id="mId" value="4" /> 
+           <input name="_metaObjID" type="hidden" value="NTkwNGU4NWQtNTllNi00ZmY0LWI3MmMtNzYyMjZlYzc3ZjBm" />
+           <input name="_viewName" type="hidden" value="TGFuZ1ZpZXc=" />
+           <input name="_version" type="hidden" value="MjAxMzA3MDQwNDQ4NDU3MTIx" />
+           <input name="_formIndex" type="hidden" value="41011" />
+           <div class="form_container" id="RecruitmentPortal.Lang"> 
+            <h2 class="form_title"> <strong>语言能力</strong> <span class="tab"></span> </h2> 
+            <div class="form_part"> 
+             <div class="form_part_container columnone"> 
+             </div> 
+             <div class="clear"></div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="dl_borderdashed" style="border-bottom: none;"></div> 
+        </form> 
+       </div> 
+       <input type="hidden" class="viewName" value="201307040448457121" /> 
+      </div> 
+     </div> 
+    </div> 
+    <!--简历内容 e--> 
+   </div> 
+   <div class="dl_footer"> 
+    <p>&copy;2015&nbsp;北京大生知行科技有限公司51talk&nbsp;&nbsp;京ICP备05051632号 京公网安备110108002767号 &nbsp;&nbsp;帮助热线：4006506886</p> 
+   </div> 
+  </div>  
+  <!--引用静态文件:dataInitFunc,HangYe,AreaJson,NewAreaJson--> 
+  <script type="text/javascript"> function setAJson(data){ window.Ajson=data; } function setNewAJson(data){ window.NewAjson=data; } function setMJson(data){ window.Mjson=data; } </script> 
+  <script type="text/javascript" src="__STATIC__/http://const.tms.beisen.com/ConstData.svc/Const/hangye?callback=setMJson"></script>
+  <script type="text/javascript" src="__STATIC__/http://const.tms.beisen.com/ConstData.svc/Const/Areas?callback=setAJson"></script>
+  <script type="text/javascript" src="__STATIC__/http://const.tms.beisen.com/Api/Defination/AreaFormat?callback=setNewAJson"></script> 
+ </body>
+</html>

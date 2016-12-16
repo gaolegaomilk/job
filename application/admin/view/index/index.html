@@ -1,0 +1,72 @@
+
+<style>
+	.box{
+		height:530px;
+		width:;
+	}
+	.img{
+		width:400px;height:400px;margin-left:200px;float:left;
+	}
+	.ul{
+		width:200px;height:400px;float:left;margin-left:150px;margin-top:20px;
+	}
+	.ul li{margin-bottom:20px;}
+</style>
+<div class="view-product background-color">
+	<div class="box">
+		<span style="display:inline-block; font-size:50px;margin-left:500px;margin-top:20px;font-weight:bold">欢迎回家</span>
+		<div></div>
+		<div class="img"><img src="__ADMIN__STATIC__/Image/admin.jpg" style="width:450px;height:400px;" alt=""></div>
+		<div class="ul">
+			<ul id="ul">
+				<li><button id="btn" type="button" class="btn btn-primary" >站点管理</button></li>
+				<li><button id="btn" type="button" class="btn btn-primary" >行业管理</button></li>
+				<li><button id="btn" type="button" class="btn btn-primary" >招聘信息</button></li>
+				<li><button id="btn" type="button" class="btn btn-primary" >职位列表</button></li>
+				<li><button id="btn" type="button" class="btn btn-primary" >消息中心</button></li>
+				<li><button id="btn" type="button" class="btn btn-primary" >普通用户</button></li>
+				<li><button id="btn" type="button" class="btn btn-primary" >企业用户</button></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script>
+$("#ul>li").each(function(i){
+	$(this).click(function(){
+		switch(i){
+			case 0:
+				location.href = '__ADMIN__SITE__/Index/webset';
+				break;
+			case 1:
+				location.href = '__ADMIN__SITE__/Position/position';
+				break;
+			case 2:
+				location.href = '__ADMIN__SITE__/Position/info';
+				break;
+			case 3:
+				location.href = '__ADMIN__SITE__/Index/posi';
+				break;
+			case 4:
+				location.href = '__ADMIN__SITE__/Index/message';
+				break;	
+			case 5:
+				location.href = '__ADMIN__SITE__/Index/userinfo';
+				break;
+			case 6:
+				location.href = '__ADMIN__SITE__/Index/identify';
+				break;
+		}
+	});
+});
+</script>
+<script>
+	$(".sidebar-title").click(function() {
+		if ($(this).parent(".sidebar-nav").hasClass("sidebar-nav-fold")) {
+			$(this).next().slideDown(200);
+			$(this).parent(".sidebar-nav").removeClass("sidebar-nav-fold");
+		} else {
+			$(this).next().slideUp(200);
+			$(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
+		}
+	});
+</script>

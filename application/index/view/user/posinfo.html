@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <title>发布信息</title> 
+  <!--通用样式Css和脚本--> 
+  <!--引用静态文件:requirejs--> 
+  <script type="text/javascript" src="__STATIC__/js/require.js"></script> 
+  <!--引用静态文件:skin_default--> 
+  <link href="__STAFcss/common.css" rel="stylesheet" type="text/css" />
+  <link href="__STATIC__/css/templateform.css" rel="stylesheet" type="text/css" />
+  <link href="__STATIC__/css/controls.css" rel="stylesheet" type="text/css" />
+  <link href="__STATIC__/css/default.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="__STATIC__/js/base_new.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/widgetnew.js?v=3"></script>
+  <script type="text/javascript" src="__STATIC__/js/common.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/bsdialog.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/common.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/controls.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/underscore.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/school-select-v2.js?v=6"></script>
+  <link href="__STATIC__/css/school-select-v2.css" rel="stylesheet" type="text/css" /> 
+  <!--引用静态文件:skin_new_css--> 
+  <link href="__STATIC__/css/main.css" rel="stylesheet" type="text/css" /> 
+  <!--引用静态文件:new_dialog_js--> 
+  <script type="text/javascript" src="__STATIC__/js/dialog_js.js"></script> 
+  <!--产品头部CSS和脚本--> 
+  <script src="__STATIC__/js/WdatePicker.js"></script> 
+  <!--引用静态文件:front_css--> 
+  <link href="__STATIC__/css/front.css" rel="stylesheet" type="text/css" />  
+  <style type="text/css">
+          .checkbox_list {float: left;width: 450px;}
+          .form_container ul li span.start_date {width: 80px;}
+          .form_container ul li span.end_date {width: 70px;}
+          .dl_logo img {
+              width: auto!important;
+              height: 40px!important;
+              margin: 16px 0 0 30px!important;
+            }
+          body{background-image:url(__STATIC__/images/dd.jpg);}
+    </style>
+
+
+  <link rel="stylesheet" href="__STATIC__/admin/css/bootstrap.css" /> 
+ </head> 
+ <body> 
+  <div class="bs_deliver"> 
+   <div class="dl_header_border"> 
+    <div class="dl_header clearfix"> 
+     <div class="dl_logo"> 
+      <img id="logoImg" class="header-logo-img" src="__STATIC__/images/104003_medias_20141215_20141215logo.jpg?v=635542641034400000" style="width: 300px;height:80px;display: none;" /> 
+     </div> 
+     <div class="dl_rightit"> 
+      <div class="isApplyDetail" style="display:none"> 
+       <div class="isLogin" style="display:none"> 
+        <span id="topUserEmail" class="pad3" title=""><span class="userShortName"></span>，欢迎您！</span> 
+        <span class="pad3"><a href="__STATIC__/index.html">招聘首页</a></span> 
+        <em class="dl_header_line dl_padtb05">|</em> 
+        <span class="isUserCenter" style="display:none"> <span class="pad3"><a href="__STATIC__/member_apply.html">个人中心</a></span> <em class="dl_header_line dl_padtb05">|</em> </span> 
+        <span class="pad3"><a href="__STATIC__//Portal/Account/Logout">退出</a></span> 
+       </div> 
+       <div class="unLogin" style="display:none"> 
+        <span class="pad3"><a href="__STATIC__/index.html">招聘首页</a></span> 
+        <em class="dl_header_line dl_padtb05">|</em> 
+        <span class="pad3"><a href="__STATIC__//Portal/Account/Login">登录</a></span> 
+        <em class="dl_header_line dl_padtb05">|</em> 
+        <span class="pad3"><a href="__STATIC__//Portal/Account/Register">注册</a></span> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="dl_content dl_gray_bg"> 
+    <!----> 
+    <!--申请职位 s--> 
+    <!--申请职位 e--> 
+    <!--我的简历 s--> 
+    <!--简历内容 s--> 
+    <div class="dl_bigwrap dl_heightagain clearfix dl_grey_bc"> 
+     <div class="leftmenu" style="width:170px"> 
+      <div class="dl_greyline_bg"> 
+       <span class="">个人中心</span> 
+      </div> 
+        <ul class="dl_menulist clearfix"> 
+        <ul class="dl_menulist clearfix"> 
+        <li> <a href="__SITE__/index/user/gui" class="apply">填写规则</a> </li> 
+        <li> <a href="__SITE__/index/user/info" class="shoucang">填写企业资料</a></li> 
+        <li> <a href="__SITE__/index/user/upcompany" class="shoucang">修改企业资料</a> </li>
+        <li> <a href="__SITE__/index/user/password" class="shoucang">修改密码</a></li>
+        <li> <a href="__SITE__/index/user/custome" class="shoucang">修改图像</a></li>
+        <li> <a href="__SITE__/index/user/resumecom" class="shoucang">查看企业资料</a></li>
+        <li> <a href="__SITE__/index/user/coume" class="shoucang">查看简历</a></li>
+        <li> <a href="__SITE__/index/user/position" class="shoucang">已发职位</a></li>
+        <li> <a href="__SITE__/index/index" class="shoucang">返回首页</a> </li>
+        </ul> 
+      </ul> 
+     </div> 
+     <div class="rightcontent dl_height1 dl_new_error_wrap" style="width:730px;height:820px;"> 
+      <h3 class="dl_bigtit"><span class="dl_postit">发布职位</span></h3> 
+      <style type="text/css">
+    *html .dl_myleftform .form_container {
+        width: 490px;
+        overflow: hidden;
+    }
+
+        *html .dl_myleftform .form_container .form_part .columntwo ul {
+            width: 360px;
+            overflow: hidden;
+        }
+
+        *html .dl_myleftform .form_container ul li {
+            width: 360px;
+            overflow: hidden;
+        }
+            /* .dl_myleftform .form_container li label{width: 100px}*/
+            *html .dl_myleftform .form_container ul li span.preview_text {
+                width: 220px;
+                overflow: hidden;
+            }
+
+    .form_container li textarea {
+        border: 1px solid #c1d5df;
+        float: left;
+        height: 100px;
+        margin-right: 5px;
+        padding: 3px;
+        width: 300px;
+    }
+</style> 
+      <div class="dl_basicinfo"> 
+       <div class="dl_greyline_bg">
+        <span class="">职位信息</span>
+       </div> 
+       <div class="dl_basicborder mainContainer "> 
+       <!--  <form method="post" id="cd7c7714-b39a-43a0-9c7e-f7382f04f5cd" name="cd7c7714-b39a-43a0-9c7e-f7382f04f5cd" enctype="multipart/form-data" action="/Portal/Resume/ResumeItem">  -->
+         <div class="clearfix"> 
+          <div id="resumeitems" name="singleedit" class="dl_myleftform" style="display:none;;"> 
+           <input type="hidden" name="oId" id="Hidden1" value="a4fc2e74-0cd1-4163-a4a1-57112d95fcfc" /> 
+           <input type="hidden" name="jId" id="Hidden4" value="-1" /> 
+           <input type="hidden" name="mId" id="Hidden5" value="0" /> 
+           <input name="_objectDataID" type="hidden" value="NDc0NjFhMzktMTg2My00YzM3LTlmOTgtY2ZkN2UyOTFlNmQ0JGE0ZmMyZTc0LTBjZDEtNDE2My1hNGExLTU3MTEyZDk1ZmNmYw==" />
+           <input name="_metaObjID" type="hidden" value="NDc0NjFhMzktMTg2My00YzM3LTlmOTgtY2ZkN2UyOTFlNmQ0" />
+           <input name="_viewName" type="hidden" value="UGVyc29uUHJvZmlsZVZpZXc=" />
+           <input name="_version" type="hidden" value="MjAxMzA3MDQwNDQ4NDUzNzIx" />
+           <input name="_formIndex" type="hidden" value="1" />
+           <div class="form_container" id="RecruitmentPortal.PersonProfile"> 
+            <h2 class="form_title"> <strong>个人信息</strong> <span class="tab"></span> </h2> 
+            <div class="form_part"> 
+             <div class="form_part_container columnone"> 
+             </div> 
+             <div class="clear"></div> 
+            </div> 
+            <div class="form_part"> 
+             <div class="form_part_container columntwo"> 
+             
+             </div> 
+             <div class="clear"></div> 
+            </div> 
+            <div class="form_part"> 
+             <div class="form_part_container columnone"> 
+              
+             </div> 
+             <div class="clear"></div> 
+            </div> 
+           </div> 
+          </div> 
+          <div name="singleview" class="dl_myleftform" style=""> 
+           <div class="form_container" id="RecruitmentPortal.PersonProfile"> 
+            <h2 class="form_title"> <strong>个人信息</strong> <span class="tab"></span> </h2> 
+            <div class="form_part"> 
+             <div class="form_part_container columnone"> 
+             <form action="{:url('index/Auth/doPosinfo')}" method="post">
+              <ul> 
+               <li><label>职位：</label> <span class="preview_text"><input type="text" name="position" style="width:195px;height:25px;"></span> </li> 
+               <li><label>所属行业：</label>
+                <span class="preview_text">
+                <select name="vid" style="width:200px;height:25px;">
+                  <option value="">所属行业</option>
+                {foreach $voc as $val}
+                  <option value="{$val['vid']}">{$val['classname']}</option>
+                {/foreach}
+                </select>
+                </span> 
+                </li> 
+               <li>
+               <label>所属类型：</label> <span class="preview_text">
+               <select name="cid" style="width:200px;height:25px;">
+                <option value="">所属类型</option>
+                {foreach $category as $val}
+                  <option value="{$val['cid']}">{$val['classname']}</option>
+                {/foreach}
+                </select>
+               </li>   
+                <li>
+               <label>所属城市：</label> <span class="preview_text">
+               <select name="sid" style="width:200px;height:25px;">
+                {foreach $city as $val}
+                  <option value="{$val['sid']}">{$val['classname']}</option>
+                {/foreach}
+                </select>
+                </li>
+
+                <li>
+               <label>招聘人数：</label> 
+               <span class="preview_text">
+                <input type="text" name="person_num" style="width:60px;height:25px;"">
+               </span>
+                </li>
+                <li>
+                <label>工作经验：</label> 
+               <span class="preview_text">
+                <input type="text" name="work_year" style="width:200px;height:24px;"">
+               </span>
+                </li>
+                 <li>
+                <label>学历要求：</label> 
+               <span class="preview_text">
+                <input type="text" name="qualication" style="width:200px;height:24px;"">
+               </span>
+                </li>
+                <li>
+                <label>工作责任：</label> 
+               <span class="preview_text">
+                <textarea type="text" name="work_duty" style="width:460px;height:230px;"></textarea>
+               </span>
+                </li>
+
+              </ul> 
+                <input type="submit" name="sub" value="提交" style="color:white;font-size:14px;border:none;width:65px;height:30px;background: #428BCA;margin-left:560px;margin-top:25px;border-radius: 0.5em;">
+              </form>
+             </div> 
+             <div class="clear"></div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </form> 
+        <input type="hidden" class="viewName" value="201307040448453721" /> 
+       </div> 
+      </div> 
+      <style type="text/css">
+    *html .dl_myleftform .form_container {
+        width: 490px;
+        overflow: hidden;
+    }
+
+        *html .dl_myleftform .form_container .form_part .columntwo ul {
+            width: 360px;
+            overflow: hidden;
+        }
+
+        *html .dl_myleftform .form_container ul li {
+            width: 360px;
+            overflow: hidden;
+        }
+            /* .dl_myleftform .form_container li label{width: 100px}*/
+            *html .dl_myleftform .form_container ul li span.preview_text {
+                width: 220px;
+                overflow: hidden;
+            }
+
+    .form_container li textarea {
+        border: 1px solid #c1d5df;
+        float: left;
+        height: 100px;
+        margin-right: 5px;
+        padding: 3px;
+        width: 300px;
+    }
+</style> 
+       <div class="dl_basicborder"> 
+        <form method="post" id="1015a315-3343-4c51-9d11-3c90e10bc8b8" name="1015a315-3343-4c51-9d11-3c90e10bc8b8" enctype="multipart/form-data" action="/Portal/Resume/ResumeItem"> 
+         <div class="eduhistory_drmmbnew pos_realitive"> 
+          
+          <div id="resumeitems" class="eduinfo rightcontent_edrmmb"> 
+           <input type="hidden" name="oId" id="Hidden7" value="30d193ad-9915-4786-8d84-8191f9bc6c89" /> 
+           <input type="hidden" name="jId" id="Hidden8" value="-1" /> 
+           <input type="hidden" name="mId" id="Hidden9" value="6" /> 
+           <div class="form_container" id="RecruitmentPortal.Experience"> 
+            <h2 class="form_title"> <strong>工作经验</strong> <span class="tab"></span> </h2> 
+            <div class="form_part">
+             <div class="clear"></div> 
+            </div> 
+           
+           </div> 
+          </div> 
+         </div> 
+         <div class="dl_borderdashed"></div> 
+        </form> 
+       </div> 
+       <input type="hidden" class="viewName" value="201307040448456801" /> 
+      </div> 
+      <div class="dl_educationwrap mainContainer" style="padding: 0px 20px;"> 
+       
+       <div class="dl_basicborder" style="display: none;"> 
+        <form method="post" id="emptyFrom_4" name="emptyFrom_4" enctype="multipart/form-data" action="/Portal/Resume/ResumeItem" style="display: none;"> 
+         <div class="eduhistory_drmmbnew pos_realitive"> 
+          <div class="dl_delupd blue deletelink_edrmmb pos_absolute dl_right0" style="width: 660px;">
+           <a name="delItem" href="__STATIC__/javascript:void(0)">删除</a> 
+           <a name="editItem" href="__STATIC__/javascript:void(0)" class="dl_mglft10">编辑</a>
+          </div> 
+          
+             <div class="clear"></div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="dl_borderdashed"></div> 
+      <!--   </form>  -->
+       </div> 
+       <input type="hidden" class="viewName" value="201307040448457121" /> 
+       <div class="dl_mgtop10"> 
+        <a name="addItem" href="__STATIC__/#this" class="dl_add_ico blue">继续添加</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <!--简历内容 e--> 
+   </div> 
+  <div class="dl_footer"> 
+    <p>&copy;2015&nbsp;北京大生知行科技有限公司51talk&nbsp;&nbsp;京ICP备05051632号 京公网安备110108002767号 &nbsp;&nbsp;帮助热线：4006506886</p> 
+   </div> 
+  </div>  
+
+     <button id="btn" type="button" class="btn btn-primary" style="position:absolute;top:96px;right:256px">返回上一级</button>
+        <script>
+        $("#btn").click(function(){
+          location.href = "gui";
+        });
+        </script> 
+ </body>
+</html>

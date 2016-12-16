@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>XformCheck邮箱、中文、手机号和数字实时验证</title>
+  <meta name="description" content="XformCheck表单验证插件支持多种输入框类型验证，里面包含邮箱email、中文、手机号和数字验证。" />
+  <style type="text/css">
+    *{margin:0;padding:0;list-style-type:none;font-size:12px;}
+    body{background-image:url(__STATIC__/images/bg.jpg);}
+    a,img{border:0;}
+    /* formbox */
+    .formbox{width:300px; height:360px;margin-left:950px;margin-top:130px;}
+    .formbox li{height:60px;}
+    .formbox li:last-child{width:100px;}
+    .formbox li label{line-height:32px;width:80px;float:left;text-align:right;}
+    .formbox li input.text{float:left;height:28px;font-size:12px;padding:2px;margin:3px 0 0 0;width:200px;}
+    .btnimg{height:24px;background:#fff;border:0;width:80px;cursor:pointer;font-size:12px;font-weight:800;color:#ff6600;position: absolute;top:420px;left:830px;}
+    /*必要元素*/
+    .wrong{width:200px;height:20px;line-height:20px;padding-left:30px;background:url(__STATIC__/images/error_20100904.gif) no-repeat;position:absolute;font-size:12px;}
+    .right{width:100px;height:20px;position:absolute;background:url(__STATIC__/images/ok_20100904.gif) no-repeat;}
+    .formbox .public {color:#fff;font-size: 16px;}
+    .yan .Image{position: absolute;top:363px;right:330px;}
+    .shuaxin{position:absolute;top:425px;right:350px;font-size:14px;color:#fff;}
+    .verify{color:#fff;font-size:16px;position: absolute;top:370px;left:1050px;}
+    .qiye{position:absolute;top:420px;font-size:16px;color:#fff;}
+  </style>
+  <link href="__STATIC__/css/common.css" rel="stylesheet" type="text/css" />
+  <link href="__STATIC__/css/templateform.css" rel="stylesheet" type="text/css" />
+  <link href="__STATIC__/css/controls.css" rel="stylesheet" type="text/css" />
+  <link href="__STATIC__/css/default.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="__STATIC__/js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript">
+        function show()         //验证码的生成
+        {
+          var ts = Date.parse(new Date())/1000;
+          $('#img').attr("src", "/captcha?id="+ts);
+        }
+        $(function() {
+        //检测用户名是否存在用ajax发送请求
+        function chcekUsername ()
+        {
+          var username = /^\w+\@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/i;
+          $.post('__SITE__/index/Auth/authCompany',
+            {email:$("#username").val()},
+            function (data) 
+            {
+              if (data.status) 
+              {
+                $("#username").next().html('<font style="color:#fff;font-size:14px;">用户名已存在</font>');
+                return;
+              }
+                        //检测正则匹配是否符合要求
+                        if (username.test($("#username").val()))
+                        {
+                          $("#username").next().html('<font style="color:green;font-size:14px;font-weight:bold"><img src="__STATIC__/images/zzzz.png" style="position:absolute;top:5px;right:156px "alt="" />&nbsp;邮箱格式正确</font>');
+                          return true;
+                        } else {
+                          $("#username").next().html('<font style="color:red;font-size:14px;font-weight:bold"><img src="__STATIC__/images/wrong.png" style="position:absolute;top:5px;right:170px "alt="" />&nbsp;请输入正确的邮箱格式</font>');
+                          return false;
+                        }     
+                      },
+                      'json');
+        }
+            //检测密码
+            function checkPassword ()
+            {
+                //初始密码
+                var password = /\w{6,30}/;
+                if (password.test($("#password").val()))
+                {
+                  $("#password").next().html('<font style="color:green;font-size:14px;font-weight:bold"><img src="__STATIC__/images/zzzz.png" style="position:absolute;top:5px;right:126px "alt="" />&nbsp;密码输入成功</font>');
+                  return true;
+                } else {
+                  $("#password").next().html('<font style="color:red;font-size:14px;font-weight:bold"><img src="__STATIC__/images/wrong.png" style="position:absolute;top:5px;right:126px "alt="" />&nbsp;密码必须是6~30位</font>');
+                  return false;
+                }
+              }
+            //二次输入Miami；
+            function checkRepassword()
+            {
+                //确认密码
+                if ($("#repassword").val() == $("#password").val())
+                {
+                  $("#repassword").next().html('<font style ="color:green;font-size:16px;"></font>');
+                  return true;
+                } else {
+                 $("#repassword").next().html('<font style="color:red;font-size:14px;"><img src="__STATIC__/images/wrong.png" style="position:absolute;top:5px;right:110px "alt="" />两次密码不一致</font>');
+                 return false;
+               }
+             }
+            //当焦点消失的时候
+            $("#username").blur(function(){
+              chcekUsername();
+            });
+            $("#password").blur(function(){
+              checkPassword();
+            });
+
+            $("#repassword").blur(function(){
+              checkRepassword();
+            });
+
+              //对整体进行请求验证
+        //       $("#sub").click(function() {
+        //     $.ajax({
+        //         type: 'post',
+        //         url: 'http://www.goodjob.com/index/Auth/doRegister',
+        //         dataType: 'json',
+        //         async: false,
+        //         data: {
+        //             email: $("#username").val(),
+        //             password: $("#password").val(),
+        //             repasssword:$("#repasssword").val(),
+        //             Code:$("#Code").val(),
+        //            // user_type:$("#type").val()
+        //         },
+        //         success: function(data) {
+        //             // alert(data.msg);
+        //              alert(1);
+        //             $("#img").next().html('<font color="#fff">'+data.msg+'</font>');
+
+        //            // window.location.href="http://www.goodjob.com/index/index/succ";
+        //             // if (data.status) {
+        //             //   alert(data.msg);
+        //             // } else {
+        //             //   // alert(data.msg);
+        //             // }   
+        //         }
+        //     });
+        //     return false;
+        // });
+      });
+    </script>
+  </head>
+  <body>
+  <div style="text-align:center;font-size:50px;font-weight:bold;">欢迎注册</div>
+
+    <form action="{:url('index/Auth/doCompany')}" method="post">
+
+      <ul class="formbox">
+        <li>
+          <label class="public">用户名：</label><input type="text" name="email" id ="username" class="text" placeholder="请输入邮箱......" />&nbsp;&nbsp;&nbsp;&nbsp;<span style="display:inline-block; position:absolute;top:252px;right:143px;"></span>
+        </li>
+        <li>
+          <label class="public">密码：</label><input type="password" name="password" id="password" class="text" placeholder="请输入密码......" /><span style="display:inline-block; position:absolute;top:312px;right:163px;"></span>
+        </li>
+        <li>
+          <label  class="public">确认密码：</label><input type="password" name="repassword" id="repassword" class="text"
+          placeholder="请再次输入密码......" /><span style="display:inline-block; position:absolute;top:372px;right:186px;"></span>
+        </li>
+        <li class="yan">
+          <label  class="public">验证码：</label>
+          <input type="text" name="Code" class="text" id="Code" style="width:80px;" />
+          <img src="{:captcha_src()}" class="Image" id="img" onclick="show()" style="position:absolute;left:1124px;top:394px;"/><div class="verify"></div>
+        </li>
+     
+        <span onclick="show()" style="cursor: pointer; color:black;text-decoration:none;margin-top:150px;margin-left:227px">刷新一下?</span>
+      </ul> 
+      <input type="submit" id="sub" class="btnimg" value="注册" style="position:absolute;top:450px;left:1032px;"/> 
+    </form>
+    
+  </body>
+  </html>
+
+
+
+  
+  

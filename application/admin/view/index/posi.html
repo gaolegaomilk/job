@@ -1,0 +1,95 @@
+
+
+<div class="view-product">
+	<div class="info-center">
+		<div class="manage-head">
+			<h6 class=" padding-left manage-head-con "><b>用户管理</b></h6>
+		</div>
+		<div style="margin-left:20px">
+			<table class="table table-hover" style="border:none;outline:medium;width:1143px">
+				<tr class="info" style="font-weight:bold;font-size:14px;color:; ">
+					
+					<td>职位ID</td>
+					<td>职位名称</td>
+					<td>创建时间</td>
+					<td>更新时间</td>
+					<td></td>
+					<td></td>
+				</tr>
+				{volist name="result" id="data"}
+				<tr style="font-size:14px;color:; ">
+					<td>{$data.pid}</td>
+					<td>{$data.position}</td>
+					<td>{$data.create_time}</td>
+					<td>{$data.update_time}</td>
+					<td id="button">
+						{if $data.hot == 1}
+							<button type="button"  pid = {$data.pid} class="btn btn-primary">取消</button>
+							{else}
+							<button type="button"  pid = {$data.pid} class="btn btn-primary">热门职位</button>
+						{/if}
+					</td>
+					<td id="btn">
+						{if $data.length == 1}
+							<button type="button"  pid = {$data.pid} class="btn btn-primary">取消</button>
+							{else}
+							<button type="button"  pid = {$data.pid} class="btn btn-primary">长期招聘</button>
+						{/if}
+					</td>
+				</tr>										
+				{/volist}
+			</table>
+		</div>
+	</div>
+	<div style="margin-left:20px">{$result->render()}</div>
+</div>
+<script>
+$(function(){
+	$("#button button").each(function(i){
+			var btn = $(this);
+			$(this).click(function(){
+			//alert($(this).attr("pid"));
+			$.post('http://www.goodjob.com/admin/Position/hot',{'button':$(this).text(),'pid':$(this).attr("pid")},function(data){
+				// var data = JSON.parse(data);
+				//alert(data.status);
+				if(data.status){
+					btn.html(data.msg);
+				}else{
+					alert(2);
+				}
+			},'json');
+		});
+	});
+});
+</script>
+<script>
+$(function(){
+	$("#btn > button").each(function(i){
+		
+			var btn = $(this);
+			$(this).click(function(){
+			// alert($(this).attr("pid"));
+			$.post('http://www.goodjob.com/admin/Position/length',{'button':$(this).text(),'pid':$(this).attr("pid")},function(data){
+				
+				if(data.status){
+					btn.html(data.msg);
+				}else{
+					alert(2);
+				}
+			},'json');
+		});
+	});
+});
+
+</script>
+<script>
+	$(".sidebar-title").click(function() {
+		if ($(this).parent(".sidebar-nav").hasClass("sidebar-nav-fold")) {
+			$(this).next().slideDown(200);
+			$(this).parent(".sidebar-nav").removeClass("sidebar-nav-fold");
+		} else {
+			$(this).next().slideUp(200);
+			$(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
+		}
+	});
+</script>

@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/frontmodule.css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_style.css?v=0.0.0.9" front="css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_flexslider.css?v=0.0.0.9" front="css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_jqueryuicore.css?v=0.0.0.9" front="css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_jqueryuiselectmenu.css?v=0.0.0.9" front="css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_jqueryuitheme.css?v=0.0.0.9" front="css" /> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jquery191.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_dialog.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryflexslidermin.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryuicore1.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryuiposition.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryuiwidget.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryuiselectmenu1.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_demo.js?v=0.0.0.9"></script> 
+  <!--引用静态文件:requirejs--> 
+  <script type="text/javascript" src="__STATIC__/js/require.js"></script> 
+  <title>招聘详细</title> 
+ </head> 
+ <body> 
+  <div class="header"> 
+   <div class="headercontain"> 
+    <div class="logo"> 
+     <div class="logo"> 
+      <img src="__STATIC__/images/104003_medias_20141215_20141215logo.jpg?v=635542641034400000" /> 
+     </div>
+    </div> 
+    <!--module:login begin--> 
+    <div class="bs-module"> 
+     <div class="login-link "> 
+      <div class="login-hearder"> 
+        <ul class="header-unLogin" style=""> 
+         {if empty(session('user'))}
+        <li>
+         <a class="loginlink" href="__SITE__/index/user/log"> <span><b>企业登录</b></span></a>
+        </li>
+        <li>
+         <a class="loginlink" href="__SITE__/index/user/login"> <span><b>个人登录</b></span></a>
+        </li>
+        <li>
+        <a class="reglink" href="__SITE__/index/user/reg"><span><b>个人注册</b></span></a>
+        </li> 
+        <li>
+        <a class="reglink" href="__SITE__/index/user/register"> <span><b>企业注册</b></span> </a>
+        </li> 
+       </ul> 
+        {else}
+            {if session('user')["user_type"] == 1}
+        <ul class="header-login" style=""> 
+        <li class="welcome"><span><span class="userName" style="float:none"></span><b>欢迎您！{:session('user')["email"]}</b></span></li> 
+        <li class="PortalIndex"><a href="__SITE__/index/user/profile"><span><b style="color:black">个人中心</b></span></a></li> 
+        <li class="LogoutUrl"><a href="__SITE__/index/user/LoginOut"><span><b style="color:black">退出</b></span></a></li> 
+        </ul> 
+           {/if}
+            {if session('user')["user_type"] == 0}
+        <ul class="header-login" style=""> 
+        <li class="welcome"><span><span class="userName" style="float:none"></span><b style="color:">欢迎您！{:session('user')["email"]}</b></span></li> 
+        <li class="PortalIndex"><a href="__SITE__/index/user/gui"><span><b style="color:black">企业中心</b></span></a></li> 
+        <li class="LogoutUrl"><a href="__SITE__/index/user/LogOut"><span><b style="color:black">退出</b></span></a></li> 
+        </ul> 
+          {/if}
+           {if session('user')["user_type"] == 2}
+        <ul class="header-login" style=""> 
+        <li class="welcome"><span><span class="userName" style="float:none"></span><b>欢迎您！{:session('user')["email"]}</b></span></li> 
+        <li class="PortalIndex"><a href="__SITE__/index/user/guan"><span><b>管理中心</b></span></a></li> 
+        <li class="LogoutUrl"><a href="__SITE__/index/user/out"><span><b>退出</b></span></a></li> 
+        </ul> 
+           {/if}
+        {/if}
+      </div>
+
+     </div> 
+    </div> 
+    <!--module:login end-->
+    <!--module:internalrecommend begin--> 
+    <div class="bs-module"> 
+     <div class="internalrecommend-default "> 
+     </div> 
+    </div> 
+    <!--module:internalrecommend end--> 
+   </div> 
+  </div> 
+  <div class="nav"> 
+   <!--module:menu begin--> 
+   <div class="bs-module"> 
+    <div class="menu-simple "> 
+     <ul id="portalmenu"> 
+     <li><a target="_self"  href="__SITE__" class="current">首页</a> </li> 
+      <li><a target="_self"  href="__SITE__/index/index/social?cid=1" class="">社会招聘 </a> </li> 
+      <li><a target="_self"  href="__SITE__/index/index/school?cid=2" class="">校园招聘</a> </li> 
+      <li><a target="_self"  href="__SITE__/index/index/newstudent?cid=3" class="">实习生招聘</a> </li>
+      <li><a target="_self"  href="__SITE__/index/index/about?cid=4" class="">公司介绍</a> </li> 
+      <li><a target="_self"  href="__SITE__/index/index/contact?cid=5" class="">联系我们</a> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <!--module:menu end--> 
+  </div> 
+  <div class="contain zpcontain clearfix"> 
+   <div class="clearfix zpdetail eheight"> 
+    <!--module:positionsearch begin--> 
+    <div class="bs-module"> 
+     <div class="positionsearch-smallfresh "> 
+      <a name="jlt"></a> 
+
+        <div class="zhiweisousuo bodertop selectmod"> 
+        <div class="parttitleline"></div> 
+        <div class="parttitle">
+         <span class="serchico"></span>
+         <div class="wordtitle">
+          职位搜索
+         </div>
+        </div> 
+        <div class="serchcontain"> 
+        <select class="dropdown" id="c" name="c" tableindex="1">
+            <option value="">工作地区</option>
+          {foreach $city as $c}
+            <option value="{$c['sid']}">{$c['classname']}</option>
+          {/foreach} 
+        </select>
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+          <select class="dropdown jobAdClass" tabindex="2" name="jobAdClass-1" id="jobAdClass-1">
+            <option title="行业类型" value="">行业类型</option> 
+           {foreach $vocation as $voc}
+            <option value="{$voc['vid']}">{$voc['classname']}</option> 
+           {/foreach}
+          </select> 
+          <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+          <select class="dropdown" id="r" name="r" tableindex="4">
+          <option value="-1">招聘类别</option> 
+          {foreach $category as $cate}
+          <option value="{$cate['cid']}">{$cate['classname']}</option> 
+          {/foreach} 
+          </select>
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+         <input type="text" class="serchinput" maxlength="50" id="k" name="k" tabindex="6" /> 
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+        </div> 
+        <span class="serchbtn"><a  href="#" class="button  subButton">搜索</a></span> 
+       </div> 
+     </div> 
+    </div> 
+    <!--module:positionsearch end--> 
+    <div class="zhaopindongtai nomargin bodertop nosame"> 
+     <!--module:newslist begin--> 
+     <div class="bs-module"> 
+      <div class="newslist-newsimple "> 
+       <div class="parttitleline"></div> 
+       <div class="parttitle">
+        <span class="dongtaiico"></span>
+        <div class="wordtitle">
+         招聘动态
+        </div>
+       </div> 
+       <a href="#" class="morelinks">更多&gt;&gt;</a> 
+       <div class="dongtailinks"> 
+        <ul> 
+         <li><a href="#" title="51Talk最嗨实习岗来啦~快来一起嗨" target="_blank">51Talk最嗨实习岗来...</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <!--module:newslist end--> 
+    </div> 
+   </div> 
+   {foreach $select as $sel}
+      {if $sel['pid'] == $_GET['id']}
+   <div class="zhiweixiangqing fr"> 
+    <!--module:positiondetail begin--> 
+    <div class="bs-module"> 
+     <div class="positiondetail-simple "> 
+      <script type="text/javascript">
+</script> 
+   
+      <div class="xiangqingtitle"> 
+       <span>{$sel['position']}</span> 
+      </div>
+    
+      <div class="xiangqingcontain"> 
+       <div class="xiangqingline"></div> 
+       <ul class="xiangqinglist clearfix"> 
+       {foreach $category as $cate}
+        {if $sel['cid'] == $cate['cid']}
+        <li class="ntitle td-HasRecruitCategories">招聘类别：</li> 
+        <li class="nvalue">  {$cate['classname']}</li> 
+        {/if}
+       {/foreach}
+
+        <li class="ntitle td-HasKind">工作性质：</li> 
+        <li class="nvalue"> 全职 </li> 
+        <li class="ntitle td-HasSalaries">薪资范围：</li> 
+        <li class="nvalue"> 面议 </li> 
+
+        <li class="ntitle td-HasHeadCount">招聘人数：</li> 
+        <li class="nvalue"> {$sel['person_num']}</li> 
+       </ul> 
+       <ul class="xiangqinglist clearfix"> 
+        <li class="ntitle td-HasPostDate">发布时间：</li> 
+        <li class="nvalue">{$sel['create_time']}</li> 
+        <li class="ntitle td-HasEndTime">截止时间：</li> 
+        <li class="nvalue"> {$time = date('Y-m-d',$sel['over_time'])}&nbsp; </li> 
+        <br /> 
+        <div class="xiangqingtext"> 
+         {foreach $city as $c}
+          {if $c['sid'] == $sel['sid']}
+           <p>工作地点: {$c['classname']}</p> 
+          {/if}
+         {/foreach}
+        
+         <br /> 
+         <p>工作职责:&nbsp;{$sel['work_duty']}<br/></p> 
+         <p></p><br /><br /><br />
+         <p>任职资格:&nbsp;{$sel['qualication']}<br /></p>
+        </div> 
+        <div class="xiangqingfooter clearfix"> 
+         <div class="footerbtn fl">
+          <a href="__SITE__/index/index/add?id={$sel['uid']}">现在申请</a>
+         </div> 
+         <a href="__SITE__/index/index" class="returnlist">返回职位列表</a> 
+        </div> 
+        <div class="fenxiang clearfix"> 
+         <a href="__STATIC__/#this" id="collect">收藏</a> 
+         <div style="padding-top: 10px"> 
+          <div class="shareto" style="float: left; margin-left: 20px; margin-bottom: 20px">
+           分享到：
+          </div> 
+          <div style="float: left" class="jiathis_style"> 
+           <a class="jiathis_button_email"></a> 
+           <a class="jiathis_button_tqq"></a> 
+           <a class="jiathis_button_qzone"></a> 
+           <a class="jiathis_button_xiaoyou"></a> 
+           <a class="jiathis_button_tsina"></a> 
+           <a class="jiathis_button_renren"></a> 
+          </div> 
+         </div> 
+         <script type="text/javascript" src="__STATIC__/js/jia.js" charset="utf-8"></script> 
+        </div> 
+       </ul>
+      </div> 
+      <script language="javascript">
+  
+    var htmlSuccess = ['<div class="dl_dialog1">',
+                            '	<div class="dl_dialog_wrap" style="text-align:center">',
+                            '       <div class="dl_dialog_icook"><span>收藏成功！</span></div>',
+                            '	</div>',
+                            '</div>'].join("");
+    var htmlError = ['<div class="dl_dialog1">',
+                        '	<div class="dl_dialog_wrap" style="text-align:center">',
+                        '       <div class="dl_dialog_icowarn"><span>收藏失败！</span></div>',
+                        '	<div class="dl_dialog_btn">',
+                        ' <a href="__STATIC__/javascript:void(0);" class="dl_btn_grey1" id="okbtn1" ><span>确定</span></a>',
+                        '		<div>',
+                        '	</div>',
+                        '</div>'].join("");
+
+    $.ajax({
+        url: 'ajax.php?v=' + Math.random()
+        , data: {
+            'jobAdId': "620025388"
+        }           
+        , type: 'post'
+        , error: function () { }
+        , success: function (resp) {
+
+           
+
+            var hasA = 1;
+            var isAllow = 2;
+            var allowCount = 1;
+            var jobCategory = "社会招聘";
+            var isLogin = resp.Success;
+            var isAllowApplyInfinity = 3;
+
+            $(document).ready(function () {
+
+                $("#apply").click(function () {
+                    if (!isLogin) {
+                        location.href = 'login.html';
+                        return;
+                    }
+                    if (allowCount == 0 && hasA == 0) {
+
+                        var maxhas = ['<div class="dl_dialog1">',
+                                       '	<div class="dl_dialog_wrap">',
+                                       '       <div class="dl_dialog_icowarn"><span>您可以申请的' + jobCategory + '职位数为0，无法继续申请</span></div>',
+                                       '	<div class="dl_dialog_btn">',
+                                       ' <a href="__STATIC__/javascript:void(0);" class="dl_btn_grey1 ok" id="okbtn2"><span>确定</span></a>',
+                                       '		<div>',
+                                       '	</div>',
+                                       '</div>'].join("");
+                        $.modal(maxhas, {
+                            containerCss: {
+                                backgroundColor: "transparent",
+                                borderColor: "transparent",
+                                padding: 0,
+                                width: '360px'
+                            },
+                            onShow: function () {
+                                $("#okbtn2").on("click", function () {
+                                    $.modal.close();
+                                });
+                            }
+                        });
+                    }
+                    else if (hasA == 1 && isAllow == 0) {
+                        var hasas = ['<div class="dl_dialog1">',
+                                       '	<div class="dl_dialog_wrap">',
+                                       '       <div class="dl_dialog_icowarn"><span>您之前已经成功申请过该职位，请不要重复申请！</span></div>',
+                                       '	<div class="dl_dialog_btn">',
+                                       ' <a href="__STATIC__/javascript:void(0);" class="dl_btn_grey1 ok" id="okbtn2"><span>确定</span></a>',
+                                       '		<div>',
+                                       '	</div>',
+                                       '</div>'].join("");
+                        $.modal(hasas, {
+                            containerCss: {
+                                backgroundColor: "transparent",
+                                borderColor: "transparent",
+                                padding: 0,
+                                width: '360px'
+                            },
+                            onShow: function () {
+                                $("#okbtn2").on("click", function () {
+                                    $.modal.close();
+                                });
+                            }
+                        });
+                    }
+                    else {
+                        if (hasA == 1) {
+                            var url = $("#apply").attr("url");
+                            window.location.href = url;
+                            return;
+                        }
+                        if (isAllowApplyInfinity == 1) {
+                            var url = $("#apply").attr("url");
+                            $("#apply").attr("href", url);
+                            location.href = url;
+                            showWaitDialage("页面跳转中...");
+                        }
+                        var applyMsg = "您可以申请的" + jobCategory + "职位数为" + allowCount + "，请确认是否继续";
+
+                        var maxhas = ['<div class="dl_dialog1">',
+                                       '	<div class="dl_dialog_wrap">',
+                                       '       <div class="dl_dialog_icowarn"><span>' + applyMsg + '</span></div>',
+                                       '	<div class="dl_dialog_btn">',
+                                       ' <a href="__STATIC__/javascript:void(0);" class="dl_btn_grey1 ok" id="okbtn2"><span>确定</span></a>',
+                                       ' <a href="__STATIC__/javascript:void(0);" class="dl_btn_grey1 ok" id="cancelBtn"><span>取消</span></a>',
+                                       '		<div>',
+                                       '	</div>',
+                                       '</div>'].join("");
+                        $.modal(maxhas, {
+                            containerCss: {
+                                backgroundColor: "transparent",
+                                borderColor: "transparent",
+                                padding: 0,
+                                width: '360px'
+                            },
+                            onShow: function () {
+                                $("#okbtn2").on("click", function () {
+                                    var url = $("#apply").attr("url");
+                                    $("#apply").attr("href", url);
+
+                                    location.href = url;
+                                    $.modal.close();
+                                    showWaitDialage("页面跳转中...");
+                                });
+
+                                $("#cancelBtn").on("click", function () {
+                                    $.modal.close();
+                                });
+                            }
+                        });
+                    }
+                });
+
+                $("#collect").click(function () {
+
+                    if (isLogin) {
+                        $.post("/Portal/Apply/JobAdCollect", { "jId": "620025388" }, function (data) {
+                        if (!data) {
+                            htmlSuccess = htmlError;
+                        }
+                        $.modal(htmlSuccess, {
+                              containerCss: {
+                                    backgroundColor: "transparent",
+                                    borderColor: "transparent",
+                                    padding: 0,
+                                    width: '150px'
+                                },
+                                onShow: function () {
+                                    $("#okbtn1").click(function () {
+                                        $.modal.close();
+                                    });
+                                }
+                            });
+                            function a() {
+                                $.modal.close();
+                            }
+                            setTimeout(a, 2000);
+                        }, "json");
+                    } else {
+                        location.href = '/Portal/Account/Login' + '?returnUrl=' + location.href;
+                    }
+
+                });
+            })
+        }//success
+    });
+    
+    function ReturnToJobList() {
+        if (document.referrer == null || document.referrer == "" || document.referrer == location.href) {
+            location.href = '/';
+        }
+        else {
+            location.href = document.referrer;
+        }
+        return false;
+    }
+    
+    function showWaitDialage(msg) {
+        var html = ['<div class="dl_dialog1">',
+              '	<div class="dl_dialog_wrap">',
+              '   <div class="dl_tocenter">',
+              '<span class=" dl_ft14_grey2"><b>' + msg + '</b>',
+              '</span>',
+              '</div>',
+              '	</div>',
+              '</div>'].join("");
+
+        $.modal(html, {
+            containerCss: {
+                backgroundColor: "transparent",
+                borderColor: "transparent",
+                padding: 0
+            },
+            onShow: function () {
+                $("div[class='dl_dialog1']").css("padding", "15px");
+            }
+        });
+    }
+</script> 
+     </div> 
+    </div> 
+    <!--module:positiondetail end--> 
+   </div> 
+     {/if} 
+   {/foreach}
+  </div> 
+  <div class="footer">
+   <span>&copy;2015&nbsp;&nbsp;51talk&nbsp;&nbsp;京ICP备05051632号 京公网安备110108002767号 &nbsp;Powered by&nbsp;<a href="__STATIC__/http://www.beisen.com" class="footerlogo" target="_blank"></a></span>
+  </div>  
+  <script type="text/javascript">
+        require([
+            vstr('${st}/${version}/cmsportal/skin/js/baiduStatistics.js')
+
+		]);
+    </script>
+  <script type="text/javascript">
+    $(function(){
+    _splash('zhiye_contentpage',0,104003,'new.zhiye.com');
+    });
+    </script>
+ </body>
+</html>

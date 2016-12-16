@@ -1,0 +1,23 @@
+
+<style>
+		.form{width:700px;height:300px;margin:50 auto 0 auto;font-size: }
+		form{text-align: center;margin-top:100px;}
+		input{width:200px;height:30px;}
+
+</style>
+
+<div class="view-product">
+	
+	<div class="form" >
+		<div class="info-center" style="text-align:center;">
+			<h2 style="font-size:50px"><b>修改行业</b></h2>
+		</div>
+		<form action="{:url('Position/update')}" method="post">
+			<span style="display:inline-block;font-size:20px;margin-top:10px">请填写要修改的内容：</span>
+			<input type="hidden" name="vid" value="{$result.vid}">
+			<input type="text" name="classname" value=" {$result.classname}" placeholder=" " style="border:1px solid #DDDDDD;font-weight:bold;font-size:14px">
+			<!-- <input type="text" name="" value=""> -->
+			<input type="submit" value="保存" style="width:50px;background:#2A94DE;color:white">
+		</form>
+	</div>
+</div>		

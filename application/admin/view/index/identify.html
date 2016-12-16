@@ -1,0 +1,49 @@
+<div class="view-product">
+	<div class="info-center">
+		<div class="manage-head">
+			<h6 class=" padding-left manage-head-con "><b>企业用户</b></h6>
+		</div>
+
+		<div style="margin-left:20px">
+			<table class="table table-hover" style="border:none;outline:medium;width:1143px">
+				<tr class="info" style="font-weight:bold;font-size:14px;color:;">
+				<td></td>
+					<td>编号</td>
+					<td>企业邮箱</td>
+					<td>注册ip</td>
+					<td>注册时间</td>
+					<td></td>
+				</tr>
+				{volist name="binfo" id="data"}
+				<tr style="font-size:14px;color:;">
+					<td></td>
+					<td>{$data.qid}</td>
+					<td>{$data.email}</td>
+					<td>{$data.ip}</td>
+					<td>{$data.create_time}</td>
+					<td>
+						<a href="__ADMIN__SITE__/User/editcom?qid={$data.qid}">详情</a> 
+						<a href="__ADMIN__SITE__/User/delcom?qid={$data.qid}">删除</a>
+					</td>
+				</tr>
+				{/volist}
+			</table>
+		</div>
+		<div style="margin-left:20px">{$binfo->render()}</div>
+	</div>
+	<div class="show-page padding-top-0 layout hidden">
+		<ul class="tr-float">
+		</ul>
+	</div>
+</div>
+<script>
+	$(".sidebar-title").click(function() {
+		if ($(this).parent(".sidebar-nav").hasClass("sidebar-nav-fold")) {
+			$(this).next().slideDown(200);
+			$(this).parent(".sidebar-nav").removeClass("sidebar-nav-fold");
+		} else {
+			$(this).next().slideUp(200);
+			$(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
+		}
+	});
+</script>

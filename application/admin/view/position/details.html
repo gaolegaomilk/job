@@ -1,0 +1,43 @@
+
+<div class="view-product background-color">
+  <div class="padding-big background-color">
+  <div class="manage-head">
+    <h1 class=" padding-left manage-head-con ">用户信息管理</h1>
+  </div>
+     <div class="dl_bacwrap dl_new_error_wrap"> 
+      <div class="mainwrap"> 
+       <br /> 
+       <h3 class="dl_bigtit"> <span class="dl_postit"></span> <span class="dl_padl20">{$result.title}</span> </h3> 
+       <br /> 
+       
+        <div class="clearfix"> 
+         <div class="dl_myleftform"> 
+          <div class="form_container" id="RecruitmentPortal.PersonProfile"> 
+           <div class="form_part"> 
+            <div class="form_part_container columnone"> 
+             <ul> 
+                <li></li>
+                <li><div style="width:600px;">{$result.content}</div></li>
+                <li><button  id="btn" style="margin-left:270px" type="button" class="btn btn-primary">返回上一步</button></li>
+             </ul> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+      <!--  <div style="width:70px;height:35px;background:#2A94DE; line-height:35px;text-align:center; position:absolute;bottom:30px;left:366px;" class="dl_subbtn dl_htline32">
+        <a style="color:white;" href="__ADMIN__SITE__/index/identify">返回上一步</a> 
+       </div> -->
+        
+       <div class="error_show" style="text-align:center;padding-top:10px;display:none">
+        <span class="new_pop_error" style="width:auto;font-weight:bold">部分内容未填写完整，请完善。</span>
+       </div> 
+      </div> 
+     </div> 
+  </div>
+</div>
+<script>
+$("#btn").click(function(){
+  location.href = '__ADMIN__SITE__/Index/message';
+});
+</script>

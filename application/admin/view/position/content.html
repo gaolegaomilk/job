@@ -1,0 +1,43 @@
+<style>
+
+	#sel{
+		border:1px solid #ABADB3;
+	}
+	
+	.form{
+		width:1000px;height:300px;
+		margin:0 auto;
+		font-size:16px;
+		font-weight:bold;
+	}
+	select{display:inline-block;}
+	option{width:140px;height:24px;}
+	.box{
+		margin:80px auto 20px auto;
+		overflow: hidden;
+		width:390px;
+	}
+	.sel{
+		width:300px;
+		float:left;
+	}
+</style>
+
+<div class="view-product">
+	
+	<div class="info-center">
+		<div class="manage-head">
+			<h6 class=" padding-left manage-head-con ">行业管理</h6>
+		</div>
+	</div>
+
+	<div class="form">
+		<div class="cked">
+		<form action="addContent" method="post">
+			标题：<input type="text" name="title" style="width:300px; height:30px">
+			<textarea name="content" class='ckeditor' id='textarea'></textarea>
+			<input type="submit" value="发表" style="width:50px; height:30px">
+		</form>
+	</div>
+	</div>
+</div>

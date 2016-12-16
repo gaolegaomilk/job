@@ -1,0 +1,80 @@
+<style>
+
+</style>
+<div class="view-product">
+	<div class="info-center">
+		<div class="manage-head">
+			<h6 class=" padding-left manage-head-con "><b>职位详情</b></h6>
+		</div><!--  -->
+		<div style="width:200px height:30px;position:absolute;top:10px;left:300px">
+		<form action="__ADMIN__SITE__/Position/option" method="post">		
+			<input type="text" name="username" style="border:1px solid #DDDDDD;width:200px;height:30px">
+			<input type="submit" id="sub" value="搜索职位" style="width:80px;height:30px;background:#428BCA;color:white;font-weight:bold;font-size:13px">
+			</form>
+		</div>
+		<div></div>
+		<div style="margin-left:20px">
+			<table class="table table-hover" style="border:none;outline:medium;width:1143px">
+				<tr class="info" style="font-weight:bold;font-size:14px;color:; ">
+					<td>编号</td>
+					<td>职位名称</td>
+					<td>所属行业</td>
+					<td>所属板块</td>
+					<td>招聘公司</td>
+					<td>学历要求</td>
+					<td>工作地点</td>
+					<td>招聘人数</td>
+					<td>发布时间</td>
+					<td>截至时间</td>
+				</tr>
+				<div >
+				{volist name="findPosi" id="val"}
+				<tr id="none" class="tr" style="font-size:14px;color:; ">
+					<td>{$val.pid}</td>
+					<td>{$val.position}</td>
+					{volist name="find" id="data"}
+						{if $val.vid == $data.vid}
+						<td>{$data.classname}</td>
+						
+						{/if}
+					{/volist}
+					
+					{volist name="findCate" id="va"}
+						{if $val.cid == $va.cid}
+						<td>{$va.classname}</td>
+						{/if}
+					{/volist}
+					{volist name="findBus" id="data"}
+						{if $val.uid == $data.uid}
+						<td><a href="__ADMIN__SITE__/User/editcom?qid={$data.uid}">{$data.name}</a></td>
+						{/if}
+					{/volist}
+
+					<td>{$val.qualication}</td>
+					{volist name="city" id="data"}
+						{if $val.sid == $data.sid}
+						<td>{$data.classname}</td>
+						{/if}
+					{/volist}
+					<td>{$val.person_num}</td>
+					<td>{$val.create_time}</td>
+					<td>{$time = date('Y-m-d', $val['over_time'])}</td>
+				</tr></div>
+				{/volist}
+			</table>
+		</div>
+		<div  style="margin-left:20px">{$findPosi->render()}</div>
+	</div>
+</div>
+
+<script>
+	$(".sidebar-title").click(function() {
+		if ($(this).parent(".sidebar-nav").hasClass("sidebar-nav-fold")) {
+			$(this).next().slideDown(200);
+			$(this).parent(".sidebar-nav").removeClass("sidebar-nav-fold");
+		} else {
+			$(this).next().slideUp(200);
+			$(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
+		}
+	});
+</script>

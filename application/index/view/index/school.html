@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/frontmodule.css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_style.css?v=0.0.0.9" front="css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_flexslider.css?v=0.0.0.9" front="css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_jqueryuicore.css?v=0.0.0.9" front="css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_jqueryuiselectmenu.css?v=0.0.0.9" front="css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_jqueryuitheme.css?v=0.0.0.9" front="css" /> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jquery191.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryflexslidermin.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryuicore1.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryuiposition.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryuiwidget.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryuiselectmenu1.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_demo.js?v=0.0.0.9"></script> 
+  <!--引用静态文件:requirejs--> 
+  <script type="text/javascript" src="__STATIC__/js/require.js"></script> 
+  <title>全部职位</title> 
+ </head> 
+ <body> 
+  <div class="header"> 
+   <div class="headercontain"> 
+    <div class="logo"> 
+     <img src="__STATIC__/images/104003_medias_20141215_20141215logo.jpg?v=635542641034400000" /> 
+    </div> 
+    <!--module:login begin--> 
+    <div class="bs-module"> 
+     <div class="login-link "> 
+      <div class="login-hearder"> 
+         {if empty(session('user'))}
+       <ul class="header-unLogin" style=""> 
+        <li><a class="loginlink" href="__SITE__/index/user/login"> <span>个人登录</span> </a></li>
+        <li><a class="loginlink" href="__SITE__/index/user/log"> <span>企业登录</span> </a></li> 
+        <li><a class="reglink" href="__SITE__/index/user/reg"><span>个人注册</span></a></li> 
+        <li><a class="reglink" href="__SITE__/index/user/register"><span>企业注册</span></a></li> 
+       </ul> 
+        {else}
+            {if session('user')["user_type"] == 1}
+       <ul class="header-login" style=""> 
+        <li class="welcome"><span><span class="userName" style="float:none"></span><b>欢迎您！{:session('user')["email"]}</b></span></li> 
+        <li class="PortalIndex"><a href="__SITE__/index/user/profile"><span><b>个人中心</b></span></a></li> 
+        <li class="LogoutUrl"><a href="__SITE__/index/user/loginOut"><span><b>退出</b></span></a></li> 
+       </ul> 
+            {/if}   
+            {if session('user')["user_type"] == 0}
+       <ul class="header-login" style=""> 
+        <li class="welcome"><span><span class="userName" style="float:none"></span><b>欢迎您！{:session('user')["email"]}</b></span></li> 
+        <li class="PortalIndex"><a href="__SITE__/index/user/gui"><span><b>企业中心</b></span></a></li> 
+        <li class="LogoutUrl"><a href="__SITE__/index/user/logOut"><span><b>退出</b></span></a></li> 
+       </ul> 
+            {/if}
+            {if session('user')["user_type"] == 2}
+       <ul class="header-login" style=""> 
+        <li class="welcome"><span><span class="userName" style="float:none"></span><b>欢迎您！{:session('user')["email"]}</b></span></li> 
+        <li class="PortalIndex"><a href="__SITE__/index/user/guan"><span><b>管理中心</b></span></a></li> 
+        <li class="LogoutUrl"><a href="__SITE__/index/user/out"><span><b>退出</b></span></a></li> 
+       </ul> 
+            {/if}
+        {/if}
+      </div> 
+     </div> 
+    </div> 
+    <!--module:login end-->
+    <!--module:internalrecommend begin--> 
+    <div class="bs-module"> 
+     <div class="internalrecommend-default "> 
+      <div class="internaldiv"> 
+      </div> 
+     </div> 
+    </div> 
+    <!--module:internalrecommend end--> 
+   </div> 
+  </div> 
+  <div class="nav"> 
+   <!--module:menu begin--> 
+   <div class="bs-module"> 
+    <div class="menu-simple "> 
+     <ul id="portalmenu"> 
+      <li><a target="_self"  href="__SITE__" class="current">首页</a> </li> 
+      <li><a target="_self"  href="__SITE__/index/index/social?cid=1" class="">社会招聘 </a> </li> 
+      <li><a target="_self"  href="__SITE__/index/index/school?cid=2"class="">校园招聘</a> </li> 
+      <li><a target="_self"  href="__SITE__/index/index/newstudent?cid=3" class="">实习生招聘</a> </li>
+      <li><a target="_self"  href="__SITE__/index/index/about?cid=4" class="">公司介绍</a> </li> 
+      <li><a target="_self"  href="__SITE__/index/index/contact?cid=5" class="">联系我们</a> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <!--module:menu end--> 
+  </div> 
+  <div class="pictureplace"> 
+   <div class="pictureplacecenter"> 
+    <img src="__STATIC__/images/commonbanner.jpg?v=634507909375300000" /> 
+   </div> 
+  </div> 
+  <div class="contain joblist clearfix"> 
+   <div class="containsidebar"> 
+    <!--module:positioncategory begin--> 
+    <div class="bs-module"> 
+     <div class="positioncategory-smallfresh "> 
+      <div class="zhiweifenlei bodertop"> 
+       <div class="parttitleline"></div> 
+       <div class="parttitle height0">
+        <span class="fenleiico"></span>
+        <div class="wordtitle lh0" title="职位类型">
+         职位类型
+        </div>
+       </div> 
+       <div class="fenleilist"> 
+        <ul class="firstlist clearfix"> 
+         <li><a href="#">北京</a></li> 
+         <li><a href="#">上海</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <!--module:positioncategory end--> 
+    <div class="zhaopindongtai bodertop"> 
+     <!--module:newslist begin--> 
+     <div class="bs-module"> 
+      <div class="newslist-newsimple "> 
+       <div class="parttitleline"></div> 
+       <div class="parttitle">
+        <span class="dongtaiico"></span>
+        <div class="wordtitle">
+         招聘动态
+        </div>
+       </div> 
+       <a href="#" class="morelinks">更多&gt;&gt;</a> 
+       <div class="dongtailinks"> 
+        <ul> 
+         <li><a href="#" title="51Talk最嗨实习岗来啦~快来一起嗨" target="_blank">51Talk最嗨实习岗来...</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <!--module:newslist end--> 
+    </div> 
+   </div> 
+   <div class="clearfix sousuocontain fl"> 
+    <!--module:positionsearch begin--> 
+    <div class="bs-module"> 
+     <div class="positionsearch-smallfresh "> 
+      <a name="jlt"></a> 
+      <div class="zhiweisousuo bodertop"> 
+       <div class="parttitleline"></div> 
+       <form action="{:url('index/index/search')}" method="post"> 
+        <div class="zhiweisousuo bodertop selectmod"> 
+        <div class="parttitleline"></div> 
+        <div class="parttitle">
+         <span class="serchico"></span>
+         <div class="wordtitle">
+          职位搜索
+         </div>
+        </div> 
+        <div class="serchcontain"> 
+          <select class="dropdown" id="c" name="sid" tableindex="1">
+            <option value="0">工作地区</option>
+            {foreach $city as $c}
+            <option value="{$c['sid']}">{$c['classname']}</option>
+            {/foreach}
+        </select>
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" />
+
+        <select class="dropdown jobAdClass" tabindex="2" name="vid" id="jobAdClass-1">
+            <option value="0">行业类型</option> 
+            {foreach $vocation as $voc}
+            <option value="{$voc['vid']}">{$voc['classname']}</option> 
+            {/foreach}
+        </select> 
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+        <select class="dropdown" id="r" name="cid" tableindex="4">
+            <option value="0">招聘类别</option> 
+            {foreach $category as $cate}
+            <option value="{$cate['cid']}">{$cate['classname']}</option> 
+            {/foreach} 
+        </select>
+         <input type="text" class="serchinput" maxlength="50" id="k" name="search" tabindex="6" /> 
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" />  
+        </div> 
+        <span class="serchbtn"><input type="submit" name="sub" value="搜索" style="width:60px;height:26px;background: #f90;margin-top:7px;color:#fff;margin-left: 0px;"></span> 
+       </div> 
+      </form> 
+      </div> 
+     </div> 
+    </div> 
+    <!--module:positionsearch end--> 
+    <!--module:positionlist begin--> 
+    <div class="bs-module"> 
+     <div class="positionlist-newtemplate "> 
+      <div class="clearfix tablecontain" style="height:px;"> 
+       <table class="listtable"> 
+        <thead> 
+         <tr class="tabletitle"> 
+          <th class="tableleft">&nbsp;&nbsp;公司名称</th> 
+          <th class="tableleft" title="职位类型">职位名称</th> 
+          <th class="tableleft">工作地点</th> 
+          <th class="tableleft" style="position: absolute;right:280px;">发布时间</th> 
+         </tr> 
+        </thead> 
+        <tbody>
+      {foreach $select as $sel}
+            {if $sel['cid'] == $_GET['cid']}
+              {foreach $business as $bus }
+                {if $bus['uid'] == $sel['uid']}
+             <tr> 
+              <td class="tableleft joblsttitle">{$bus['name']}</td> 
+              <td class="tableleft joblsttitle"><a href="__SITE__/index/index/class?id={$sel['pid']}">{$sel['position']}</a></td>
+              {foreach $city as $c} 
+                {if $c['sid'] == $sel['sid']}
+              <td title="" class="tableleft joblsttitle">{$c['classname']}<td> 
+                {/if}
+              {/foreach}
+              <td class="tableleft joblsttitle">{$sel['create_time']}</td> 
+             </tr>
+                {/if}
+              {/foreach}
+             {/if} 
+         {/foreach}
+        </tbody>
+       </table> 
+       <div class="tablefooter"> 
+       </div> 
+      </div> 
+      <script type="text/javascript">
+
+    //职位学历映射
+    var jobAdEduMap = {
+        //        "244858631" : "高职高专",
+        //        "996726632" : "大学本科",
+        //        "208199123" : "硕士研究生",
+        //        "214287756": "博士研究生"
+
+        "244858631": "高职高专",
+        "996726632": "大学本科",
+        "208199123": "硕士研究生",
+        "214287756": "博士研究生"
+    }
+
+    //获取locationUrl判定是否需要获取额外添加的列
+    var url = window.location.href;
+
+    if (url.indexOf("cnnp.zhiye.com") > 0) {//域名
+        //获取列表第一列职位广告ID
+        var ids = [];
+        var jobTitles = $(".joblsttitle a ");
+        //循环获取HREF提取JobId
+        for (var i = 0; i < jobTitles.length; i++) {
+            //            var id = jobTitles[i].pathname.split("/")[2];
+            //            //点击标签后该Url携带其他条件，再次过滤
+            //            if (id.indexOf("?")) {
+            //                id = id.split("?")[0];
+            //            }
+            var id = $(jobTitles[i]).attr("jobadid");
+            ids.push(parseInt(id));
+        }
+
+        //判定列表中存在数据
+        if (ids.length > 0) {
+            $.ajax({
+                url: "/Extensions/Widget/GetJobAdditional",
+                data: {
+                    jobAdIds: ids.toString(),
+                    additionalKeys: "extA9000_102054_949224493" //extA900_100102_2063773255
+                },
+                type: "POST",
+                dataType: 'json'
+            }).done(function (resp) {
+                //添加学历列
+                $(".listtable thead .tabletitle th:eq(2)").before('<th class="tableleft">学历</th>');
+                var htmlMap = [];
+                for (var i = 0; i < ids.length; i++) {
+                    var map = { jobadid: ids[i], eduName: '' };
+                    for (var j = 0; j < resp.length; j++) {
+
+                        if (ids[i] == parseInt(resp[j].JobAdId)) {
+                            map.eduName = jobAdEduMap[resp[j].AdditionaList[0].AdditionaValue];
+                        }
+                    }
+                    htmlMap.push(map);
+                }
+                for (var o = 0; o < htmlMap.length; o++) {
+                    $(".joblsttitle a[jobadid='" + (htmlMap[o].jobadid || '') + "'] ").parent().parent().find("td:eq(2)").before('<td class="tableleft joblsttitle" title="' + htmlMap[o].eduName + '">' + htmlMap[o].eduName + '</td>');
+                }
+            });
+        }
+    }
+</script> 
+     </div> 
+    </div> 
+    <!--module:positionlist end-->
+    <!--module:deliverystoredb begin--> 
+    <div class="bs-module"> 
+     <div class="deliverystoredb-default "> 
+     </div> 
+    </div> 
+    <!--module:deliverystoredb end--> 
+   </div> 
+  </div> 
+  <div class="footer">
+   <span> &copy;2015&nbsp;&nbsp;51talk&nbsp;&nbsp;京ICP备05051632号 京公网安备110108002767号 &nbsp;Powered by&nbsp;<a href="__STATIC__/http://www.beisen.com" class="footerlogo" target="_blank"></a></span>
+  </div>  
+  <script type="text/javascript">
+        require([
+            vstr('${st}/${version}/cmsportal/skin/js/baiduStatistics.js')
+
+    ]);
+    </script>
+  <script type="text/javascript">
+    $(function(){
+    _splash('zhiye_contentpage',0,104003,'new.zhiye.com');
+    });
+    </script>
+ </body>
+</html>

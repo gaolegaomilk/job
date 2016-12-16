@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/frontmodule.css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_style.css?v=0.0.0.9" front="css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_flexslider.css?v=0.0.0.9" front="css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_jqueryuicore.css?v=0.0.0.9" front="css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_jqueryuiselectmenu.css?v=0.0.0.9" front="css" /> 
+  <link type="text/css" rel="stylesheet" href="__STATIC__/css/5_themes_default_jqueryuitheme.css?v=0.0.0.9" front="css" />
+  <!--引用静态文件:requirejs--> 
+  <title>首页</title> 
+ </head> 
+ <body> 
+  <div class="header"> 
+   <div class="headercontain"> 
+    <div class="logo"> 
+     <img src="__STATIC__/images/104003_medias_20141215_20141215logo.jpg?v=635542641034400000" /> 
+    </div> 
+    <!--module:login begin--> 
+    <div class="bs-module"> 
+     <div class="login-link "> 
+       <div class="login-hearder"> 
+       {if empty(session('user'))}
+       <ul class="header-unLogin" style=""> 
+        <li>
+        <a class="loginlink" href="__SITE__/index/user/login"> <span><b>个人登录</b></span> </a></li>
+         <li>
+        <a class="loginlink" href="__SITE__/index/user/log"> <span><b>企业登录</b></span> </a></li>
+        <li><a class="reglink" href="__SITE__/index/user/reg"><span><b>个人注册</b></span></a></li>
+         <li><a class="reglink" href="__SITE__/index/user/register"><span><b>企业注册</b></span></a></li>
+       </ul> 
+       {else}
+            {if session('user')["user_type"] == 1}
+       <ul class="header-login" style=""> 
+        <li class="welcome"><span><span class="userName" style="float:none"></span><b>欢迎您！{:session('user')["email"]}</b></span></li> 
+        <li class="PortalIndex"><a href="__SITE__/index/user/profile"><span><b>个人中心</b></span></a></li> 
+        <li class="LogoutUrl"><a href="__SITE__/index/user/loginOut"><span><b>退出</b></span></a></li> 
+       </ul>
+           {/if}   
+            {if session('user')["user_type"] == 0}
+        <ul class="header-login" style=""> 
+        <li class="welcome"><span><span class="userName" style="float:none"></span><b>欢迎您！{:session('user')["email"]}</b></span></li> 
+        <li class="PortalIndex"><a href="__SITE__/index/user/resumecom"><span><b>企业中心</b></span></a></li> 
+        <li class="LogoutUrl"><a href="__SITE__/index/user/logOut"><span><b>退出</b></span></a></li> 
+       </ul>
+          {/if}
+            {if session('user')["user_type"] == 2}
+        <ul class="header-login" style=""> 
+        <li class="welcome"><span><span class="userName" style="float:none"></span><b>欢迎您！{:session('user')["email"]}</b></span></li> 
+        <li class="PortalIndex"><a href="__SITE__/index/user/guan"><span><b>管理中心</b></span></a></li> 
+        <li class="LogoutUrl"><a href="__SITE__/index/user/out"><span><b>退出</b></span></a></li> 
+       </ul>
+           {/if}
+        {/if}
+      </div> 
+     </div> 
+    </div> 
+    <!--module:login end-->
+    <!--module:internalrecommend begin--> 
+    <div class="bs-module"> 
+     <div class="internalrecommend-default "> 
+      <div class="internaldiv"> 
+    
+      </div> 
+     </div> 
+    </div> 
+    <!--module:internalrecommend end--> 
+   </div> 
+  </div> 
+  <div class="nav"> 
+   <!--module:menu begin--> 
+   <div class="bs-module"> 
+    <div class="menu-simple "> 
+     <ul id="portalmenu"> 
+      <li><a target="_self"  href="__SITE__" class="current">首页</a> </li> 
+      <li><a target="_self"  href="__SITE__/index/index/social?cid=1" class="">社会招聘 </a> </li> 
+      <li><a target="_self"  href="__SITE__/index/index/school?cid=2" class="">校园招聘</a> </li> 
+      <li><a target="_self"  href="__SITE__/index/index/newstudent?cid=3" class="">实习生招聘</a> </li>
+      <li><a target="_self"  href="__SITE__/index/index/about?cid=4" class="">公司介绍</a> </li> 
+      <li><a target="_self"  href="__SITE__/index/index/contact?cid=5" class="">联系我们</a> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <!--module:menu end--> 
+  </div> 
+  <div class="pictureturn"> 
+   <!--module:imageslider begin--> 
+   <div class="bs-module"> 
+    <div class="imageslider-default "> 
+     <div class="flexslider"> 
+      <ul class="slides"> 
+       <li> <img src="__STATIC__/images/tt.jpg" style="height:245px;"/> </li> 
+      </ul> 
+     </div> 
+     <script type="text/javascript">
+    $(document).ready(function(){
+        $('.flexslider').flexslider({ animation: "fade", directionNav: false, slideshowSpeed: 5000 });
+    });
+</script> 
+    </div> 
+   </div> 
+   <!--module:imageslider end--> 
+  </div> 
+  <div class="contain clearfix"> 
+   <div class="clearfix eheight"> 
+    <!--module:positionsearch begin--> 
+    <div class="bs-module"> 
+     <div class="positionsearch-smallfresh "> 
+      <a name="jlt"></a> 
+      <div class="zhiweisousuo bodertop"> 
+       <form action="{:url('index/index/search')}" method="post"> 
+        <div class="zhiweisousuo bodertop selectmod"> 
+        <div class="parttitleline"></div> 
+        <div class="parttitle">
+         <span class="serchico"></span>
+         <div class="wordtitle">
+          职位搜索
+         </div>
+        </div> 
+        <div class="serchcontain"> 
+		    <select class="dropdown" name="sid" tableindex="1">
+            <option value="0">工作地区</option>
+            {foreach $city as $c}
+            <option value="{$c['sid']}">{$c['classname']}</option>
+          {/foreach}
+        </select>
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+        	<select class="dropdown jobAdClass" tabindex="2" name="vid" id="jobAdClass-1">
+            <option value="0">行业类型</option> 
+           {foreach $vocation as $voc}
+            <option value="{$voc['vid']}">{$voc['classname']}</option> 
+           {/foreach}
+          </select>
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+          <select class="dropdown" id="r" name="cid" tableindex="4">
+          <option value="0">招聘类别</option> 
+          {foreach $category as $cate}
+          <option value="{$cate['cid']}">{$cate['classname']}</option> 
+          {/foreach} 
+          </select>
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+         <input type="text" class="serchinput" maxlength="50" id="k" name="search" tabindex="6" /> 
+         <input type="hidden" name="p" value="" id="jobAdClassHidden" /> 
+        </div> 
+        <span class="serchbtn"><input type="submit" name="sub" value="搜索" style="width:60px;height:26px;background: #f90;margin-top:7px;margin-left: 0px;color:#fff;"></span> 
+       </div> 
+      </form> 
+      </div>  
+     </div> 
+    </div> 
+    <!--module:positionsearch end--> 
+    <div class="zhaopindongtai bodertop"> 
+     <!--module:newslist begin--> 
+     <div class="bs-module"> 
+      <div class="newslist-newsimple "> 
+       <div class="parttitleline"></div> 
+       <div class="parttitle">
+        <span class="dongtaiico"></span>
+        <div class="wordtitle">
+         招聘动态
+        </div>
+       </div> 
+     <!--   <a href="" class="morelinks"> -->更多&gt;&gt;<!-- </a>  -->
+      </div> 
+     </div> 
+     <!--module:newslist end--> 
+    </div> 
+   </div> 
+   <div class="bs-module"> 
+    <div class="jobstab-default "> 
+     <div class="zhiweiliebiao"> 
+      <div class="listnav"> 
+       <ul> 
+        <li><a id="hotjob">所搜职位</a></li>
+       </ul> 
+       <a  class="listmorelinks">更多&gt;&gt;</a> 
+      </div> 
+      <div class="listlinks"> 
+       <ul id="ulfirst"> 
+        {foreach $data as $val}
+        <li style="list-style: none;"><span><img src="__STATIC__/images/point.png" alt="">&nbsp; </span><a href="__SITE__/index/index/details?id={$val['pid']}">{$val['position']}</a></li> 
+        {/foreach}
+       </ul> 
+      </div> 
+      <br />
+      <br />
+       <div class="tablefooter"> 
+        
+        <div class="pager clearfix">
+        </div> 
+       </div> 
+     </div> 
+     <script type="text/javascript">
+    $(function() {
+        loadData();
+
+        function loadData() {
+            $(".listlinks ul").each(function() {
+                $(this).hide();
+            })
+            if ($(".listchooseon").attr("id") == "hotjob") {
+                $("#ulhotjob").show();
+            } else if ($(".listchooseon").attr("id") == "longjob") {
+                $("#ullongjob").show();
+            } else {
+
+                var chooseId = $(".listchooseon").attr("id");
+                chooseId = "#ul" + chooseId;
+                $(chooseId).show();
+
+            }
+        }
+
+        $(".listnav ul li a").hover(function() {
+            $(this).parents("ul").find("a").removeClass("listchooseon");
+            $(this).addClass("listchooseon");
+            $(".listlinks ul").each(function() {
+                $(this).hide();
+            })
+            if ($(this).attr("id") == "hotjob") {
+                $("#ulhotjob").show();
+            } else if ($(this).attr("id") == "longjob") {
+                $("#ullongjob").show();
+            } else {
+
+                var chooseId = $(".listchooseon").attr("id");
+                chooseId = "#ul" + chooseId;
+                $(chooseId).show();
+            }
+        });
+
+        $(".listmorelinks").click(function() {
+            if ($(".listchooseon").attr("id") == "hotjob") {
+                window.location.href = "allJob?o=" + 2;
+            } else if ($(".listchooseon").attr("id") == "longjob") {
+                window.location.href = "allJob?o=" + 1;
+            } else {
+
+                var chooseId = $(".listchooseon").attr("id");
+                if (chooseId.indexOf("first") != -1) {
+                    chooseId = chooseId.substr(5, chooseId.length - 5);
+                    window.location.href = "allJob?p=" + "1^" + chooseId;
+                } else if (chooseId.indexOf("Third") != -1) {
+                    chooseId = chooseId.substr(5, chooseId.length - 5);
+                    window.location.href = "allJob?p=" + "3^" + chooseId;
+                }
+
+            }
+        }); 
+    });
+</script> 
+    </div> 
+   </div> 
+   <!--module:jobstab end--> 
+   <!--module:customerimage begin--> 
+   <div class="bs-module"> 
+    <div class="customerimage-default "> 
+     <div class="imgplace zx_imgplace"> 
+      <a href="__STATIC__/http://weibo.com/5284689161/profile?topnav=1&amp;wvr=6" target="_blank" class="cusimglink"><img src="__STATIC__/images/104003_medias_2015630_2015630141029143.jpg" class="cusimg" /></a> 
+     </div> 
+    </div> 
+   </div> 
+   <!--module:customerimage end--> 
+  </div> 
+  <div class="footer">
+   <span> &copy;2015&nbsp;&nbsp;51talk&nbsp;&nbsp;京ICP备05051632号 京公网安备110108002767号 &nbsp;Powered by&nbsp;<a href="__STATIC__/http://www.beisen.com" class="footerlogo" target="_blank"></a> </span> 
+  </div>
+   <script type="text/javascript">
+       window.PERF_START=new Date;
+       function _splash(page, uid, tid, pid){
+        uid =  uid || 0;  // 这里是用户ID
+        tid =  tid || 0;   // 这里是租户ID
+        pid =  pid || 'unknown';  // 这里是项目标识
+        var now = new Date;
+        var start = window.PERF_START || now;
+        var diff = now - start;
+        var rand = Math.round(Math.random()*1000000);
+        var url= document.location.protocol+'//opsapi.beisen.com/opsapi/AddLog?appName='+pid+'&label=%5Bsplash%5D%20'+page+'&uid='+uid+'&tid='+tid+'&time='+diff+'&type=1&sid='+rand+'&step=0';
+        var img = new Image;
+        img.src = url;
+    }
+    </script>   
+  <script type="text/javascript">
+        require([
+            vstr('${st}/${version}/cmsportal/skin/js/baiduStatistics.js')
+
+		]);
+    </script>
+  <script type="text/javascript">
+    $(function(){
+    _splash('zhiye_home',0,104003,'new.zhiye.com');
+    });
+    </script>
+
+    <script type="text/javascript">
+    function GetParam(key) {
+        return (document.location.search.match(new RegExp("(?:^\\?|&)" + key + "=(.*?)(?=&|$)")) || ['', null])[1];
+    }
+
+    function myHTMLEnCode(str) {
+        var s = "";
+        if (str.length == 0) return "";
+        s = str.replace(/&/g, "&");
+        s = s.replace(/</g, "<");
+        s = s.replace(/>/g, ">");
+        s = s.replace(/ /g, "&nbsp;");
+        s = s.replace(/\'/g, "&#39;");
+        
+        s = s.replace(/\n/g, "<br>");
+        return s;
+    }
+
+    function myHTMLDeCode(str) {
+        var s = "";
+        if (str.length == 0) return "";
+        s = str.replace(/&/g, "&");
+        s = s.replace(/</g, "<");
+        s = s.replace(/>/g, ">");
+        s = s.replace(/&nbsp;/g, " ");
+        s = s.replace(/&#39;/g, "\'");
+        s = s.replace(/"/g, "\"");
+        s = s.replace(/<br>/g, "\n");
+        return s;
+    }
+
+    var defaultText = "请输入关键字";
+
+    $(document).ready(function () {
+        $("input[name='keyword']").click(function () {
+            $(this).val("");
+        });
+
+        var keyWord = GetParam("k");
+
+        if (keyWord != null) {
+            keyWord = decodeURIComponent(keyWord);
+            keyWord = myHTMLDeCode(keyWord);
+
+            $("input[name='k']").val(keyWord);
+        }
+
+        $("#searchlink").click(function () {
+            var r = GetParam("r");
+            r = (r == null ? -1 : r);
+            var p = GetParam("p");
+            p = (p == null ? "" : p);
+            var c = GetParam("c");
+            c = (c == null ? "" : c);
+            var d = GetParam("d");
+            d = (d == null ? "" : d);
+            var k = $("input[name='k']").val();
+
+            if (k == defaultText)
+                k = "";
+
+            k = myHTMLEnCode(k);
+            k = encodeURIComponent($.trim(k));
+            location.href = "/search" + "?r=" + r + "&p=" + p + "&c=" + c + "&d=" + d + "&k=" + k + '#jlt';
+        });
+
+        var keyStr = $("#k").val();
+        if (!keyStr || keyStr == "") {
+            $("#k").css("color", "#d2cece");
+            $("#k").val(defaultText);
+        }
+
+        $("#k").focus(function () {
+            var v = $(this).val();
+            if (v == defaultText) {
+                $(this).val("");
+                $(this).css("color", "");
+            }
+        });
+
+        $("#k").blur(function () {
+            var v = $(this).val();
+            if (!v || v == "") {
+                $(this).val(defaultText);
+                $(this).css("color", "#d2cece");
+            }
+        });
+
+    });
+</script> 
+ <script type="text/javascript">
+ $.post("ajax.php", {type:"1"}, function(data) {
+                var loginView = $(".login-hearder .header-login");
+                var unLoginView = $(".login-hearder .header-unLogin");
+                if (data.name != '') {
+                    loginView.find('.userName').text(data.name);
+                    loginView.show()
+                }
+                else {
+                    unLoginView.show()
+                }
+            }, "json")
+     </script>
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jquery191.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryflexslidermin.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryuicore1.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryuiposition.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryuiwidget.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_jqueryuiselectmenu1.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/5_themes_default_demo.js?v=0.0.0.9"></script> 
+  <script type="text/javascript" src="__STATIC__/js/require.js"></script> 
+  <script type="text/javascript">var $bs_vars={'st':'http://stnew.beisen.com/','version':'2015.09.17.001','constSite':'http://const.tms.beisen.com'};function vstr(str) {
+         if (typeof ($bs_vars) == 'undefine')
+             return str;
+         var result = str;
+         for (var v in $bs_vars) {
+             var regex = new RegExp('\\$\\{' + v.toString() + '\\}|\\{' + v.toString() + '\\}', 'igm');
+             result = result.replace(regex, $bs_vars[v]);
+         }
+         return result;
+     };</script>
+ </body>
+</html>

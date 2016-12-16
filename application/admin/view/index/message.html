@@ -1,0 +1,66 @@
+
+<div class="view-product">
+	<div class="info-center">
+		<div class="manage-head">
+			<h6 class=" padding-left manage-head-con "><b>消息中心</b></h6>
+		</div>
+		<button id="btn" type="button" class="btn btn-primary" style="position:absolute;top:7px;right:30px">发布公告</button>
+		<script>
+			$("#btn").click(function(){
+
+				window.location.href = '__ADMIN__SITE__/Position/content';
+			});
+		</script>
+	<!-- 	<div class="info-center-con">
+			<div class=" info-center-title h5 margin-big-top clearfix">
+				<span class="fl padding-large-right manage-title"><a href="#">全部消息</a></span>
+				<span class="fl padding-large-right"><a href="#">已读消息(0)</a></span>
+				<span class="fl"><a href="#">未读消息(0)</a></span>
+			</div>
+			<p style="width: 56px; left: 20px;" class="solid-slider">
+			</p>
+		</div> -->
+		<div style="margin-left:20px">
+			<table class="table table-hover" style="border:none;outline:medium;width:1143px">
+				<tr class="info"  style="font-weight:bold;font-size:14px;color:;">
+					<td></td>
+					<td>标题</td>
+					<td style="overflow:hidden">发布时间</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				{volist name="result" id="data"}
+				<tr style="font-size:14px;">
+					<td></td>
+					<td>{$data.title}</td>
+					<td>{$time = date('Y-m-d',$data['create_time'])}</td>					
+					<td>
+						<a href="__ADMIN__SITE__/Position/details?tid={$data.tid}">查看详情</a>
+					</td>
+					<td><a href="__ADMIN__SITE__/Position/delete?tid={$data.tid}">删除</a></td>
+					<td></td>
+				</tr>										
+				{/volist}
+			</table>
+		</div>
+
+	</div>
+	<div style="margin-left:20px">{$result->render()}</div>
+
+	<div class="show-page padding-top-0 layout hidden">
+		<ul class="tr-float">
+		</ul>
+	</div>
+</div>
+<script>
+	$(".sidebar-title").click(function() {
+		if ($(this).parent(".sidebar-nav").hasClass("sidebar-nav-fold")) {
+			$(this).next().slideDown(200);
+			$(this).parent(".sidebar-nav").removeClass("sidebar-nav-fold");
+		} else {
+			$(this).next().slideUp(200);
+			$(this).parent(".sidebar-nav").addClass("sidebar-nav-fold");
+		}
+	});
+</script>

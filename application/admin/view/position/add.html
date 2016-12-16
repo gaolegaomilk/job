@@ -1,0 +1,48 @@
+<style>
+
+	#sel{
+		border:1px solid #ABADB3;
+	}
+	
+	.form{
+		width:1000px;height:300px;
+		margin:0 auto;
+		font-size:16px;
+		font-weight:bold;
+	}
+	select{display:inline-block;}
+	option{width:140px;height:24px;}
+	.box{
+		margin:80px auto 20px auto;
+		overflow: hidden;
+		width:390px;
+	}
+	.sel{
+		width:300px;
+		float:left;
+	}
+</style>
+
+<div class="view-product">
+	
+	<div class="info-center">
+		<div class="manage-head">
+			<h6 class=" padding-left manage-head-con ">行业管理</h6>
+		</div>
+	</div>
+
+	<div class="form">
+		<form action="__ADMIN__SITE__/Position/checkData" method="post">
+		<div style="width:314px;margin:10px 330px 0 auto;font-size:50px">发布新兴行业</div>
+		<div class="box">
+			<div class="sel" style="line-height:26px;width:400px">
+			&nbsp;行业名称:
+			<input type="text" name="classname" style="border:1px solid #ABADB3; width:300px;">
+			</div>
+			<div style="color:blue;position:absolute;top:280px; left:450px; font-size:30px">成就别人，从‘这里’开始</div>
+			<input type="submit" value="点击，走起" class="btn btn-primary" style="position:absolute;top:350px;right:540px">
+		</div>
+		</form>
+		
+	</div>
+</div>
