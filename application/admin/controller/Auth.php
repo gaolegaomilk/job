@@ -16,7 +16,7 @@ class Auth extends Controller
 		// dump($request->controller());
 		if(!$this->checkLogin() && $request->controller() != 'Auth')
 		{
-			$this->error('请登录', 'http://www.goodjob.com/admin/auth/login');
+			$this->error('请登录', 'auth/login');
 
 		}
 	}
@@ -89,7 +89,7 @@ class Auth extends Controller
 	public function checkout()
 	{
 		Session(null);
-		$this->success('退出成功', 'http://www.goodjob.com');
+		$this->success('退出成功', 'index/index/index');
 	}
 }
 

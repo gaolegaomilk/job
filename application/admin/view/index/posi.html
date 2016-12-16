@@ -49,7 +49,7 @@ $(function(){
 			var btn = $(this);
 			$(this).click(function(){
 			//alert($(this).attr("pid"));
-			$.post('http://www.goodjob.com/admin/Position/hot',{'button':$(this).text(),'pid':$(this).attr("pid")},function(data){
+			$.post('__ADMIN__SITE__/Position/hot',{'button':$(this).text(),'pid':$(this).attr("pid")},function(data){
 				// var data = JSON.parse(data);
 				//alert(data.status);
 				if(data.status){
@@ -69,7 +69,7 @@ $(function(){
 			var btn = $(this);
 			$(this).click(function(){
 			// alert($(this).attr("pid"));
-			$.post('http://www.goodjob.com/admin/Position/length',{'button':$(this).text(),'pid':$(this).attr("pid")},function(data){
+			$.post('__ADMIN__SITE__/Position/length',{'button':$(this).text(),'pid':$(this).attr("pid")},function(data){
 				
 				if(data.status){
 					btn.html(data.msg);
