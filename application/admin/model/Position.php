@@ -36,7 +36,7 @@ class Position extends Model
 	 */
 	public function find()
 	{
-		return Db::name('vocation')->paginate(5);
+		return Db::name('vocation')->paginate(10);
 	}
 
 	/**

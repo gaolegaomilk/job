@@ -27,7 +27,7 @@ class User extends Model
 	 */
 	public function sel()
 	{
-		return Db::table('job_user')->where('delete_time','Null')->paginate(5);
+		return Db::table('job_user')->where('delete_time','Null')->paginate(10);
 	}
 	public function findSel()
 	{
@@ -79,7 +79,7 @@ class User extends Model
 	 */
 	public function editcom()
 	{
-		return Db::table('job_company')->where('delete_time','Null')->paginate(5);
+		return Db::table('job_company')->where('delete_time','Null')->paginate(10);
 	}
 
 	public function getUser($username)
