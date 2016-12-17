@@ -5,15 +5,15 @@ use think\Controller;
 use think\Request;
 use think\Db;
 use think\Validate;
-use app\index\Model\User;
-use app\index\Model\Company;
+use app\index\model\User;
+use app\index\model\Company;
 use  think\Session;
-use app\index\Model\Business;
-use app\index\Model\Position;
-use app\index\Model\Vocation;
-use app\index\Model\Category;
-use app\index\Model\Personinfo;
-use app\index\Model\City;
+use app\index\model\Business;
+use app\index\model\Position;
+use app\index\model\Vocation;
+use app\index\model\Category;
+use app\index\model\Personinfo;
+use app\index\model\City;
 
 class Auth extends Controller
 {
