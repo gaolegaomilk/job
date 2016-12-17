@@ -140,11 +140,11 @@ return [
 
     // 视图输出字符串内容替换
     'view_replace_str'       => [
-        '__SITE__' => 'http://www.goodjob.com',
+        '__SITE__' => 'http://www.minghaha.cn',
         // '__STATIC__' => 'http://static.tp5.com/static'
-        '__STATIC__' => 'http://www.goodjob.com/static',
-        '__STATI__' => 'http://www.goodjob.com',
-        '__ADMIN__SITE__' => 'http://www.goodjob.com/admin'
+        '__STATIC__' => 'http://wwwminghaha/static',
+        '__STATI__' => 'http://www.minghaha.com',
+        '__ADMIN__SITE__' => 'http://minghaha/admin'
         
     ],
     // 默认跳转页面对应的模板文件
