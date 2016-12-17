@@ -1,0 +1,128 @@
+body,p,div,ol,li,ul,h3,h5,form,dl,dt,dd {margin:0;padding:0;}
+        body { background-color: #F0F0F0; font-size: 14px; }
+        strong { font-weight: bold; }
+        hr { border: 0; border-top: 1px dotted #ccc; height: 0; line-height: 0; }
+        h2 { text-indent: 30px; margin: 0; font-size: 20px; font-family: "simhei"; color: #999;  }
+        h4 { font-weight: bold; }
+        .clearfix { clear: both; }
+        .fs12, .tip { font-size: 12px; }
+        .container { width: 950px; margin: 0 auto; }
+        .tip-x-validate-valid, .tip-x-validate-error { background: url(http://rd2.zhaopin.com/portal/myrd/image/icon_erd.png) no-repeat; }
+        .tip-x-validate-valid { background-position: 0 10px; width: 29px; height: 29px; }
+        .tip-x-validate-error { background-position: 0 -100px; width: 29px; height: 29px; color: #fd031b; }
+        .header, .content-bottom, .content-top, .login, .submitBtn { background: url(http://rd2.zhaopin.com/portal/myrd/image/sprites.png) no-repeat; }
+        .content-body { background:#FFF; width:948px; }
+		.content-form{border:1px solid #d3cece; overflow:hidden;}
+        .content-form h2 { text-indent: 0;font-size:14px;color:#000;line-height:28px;background:#f4f4f4;padding-left:30px;}
+        .content-form tr { height: 50px; }
+        .login { background-position: -760px 0; width: 200px; height: 41px; display: block; float: right; }
+        .submitBtn { background-position:-340px -159px; width:150px; height:41px ; }
+		.register_btn{width:132px; height:45px; background:url(http://img00.zhaopin.com/2014/common/img/register_btn.png) no-repeat;}
+        .login-box { height: 41px; }
+        .tel-box { height: 93px; margin:6px 0;overflow:hidden;}
+        .subcompany { padding:5px 0 0 30px; line-height: 1.5em;background:#eaeaea;border:1px solid #d3cece;}
+		.subcompany h2{font-size:14px;color:#000;font-weight:bold;}
+        .subcompany li { float: left; width:280px; margin: 10px; text-indent: 20px; }
+        .requrie { color: red; margin-right:3px; }
+        .inputText { height: 33px; line-height: 33px; width: 290px; border: 1px solid #ccc; padding-left: 10px; }
+        .inputText:focus { border-color: #a8c8f0; -webkit-box-shadow: 0 0 6px #A7C8F1; box-shadow: 0 0 6px #A7C8F1; }
+        .inputText.input-x-validate-error {  border-color: #fd031b; }
+        .blue {height: 33px; width: 302px; line-height: 33px; display: inline-block; }
+        .tip { display: inline-block; width: 250px; height: 30px; }
+        .tip table { margin-left: 20px; }
+        .tip tr { height: 35px; line-height: 17px; }
+        #prov_select, #city_select { width: 125px; }
+        #policy { vertical-align: -2px; }
+        .popup { width: 304px; position: absolute; top: 0; left: 0; }
+        .popup dt { height: 34px; background: url('http://rd2.zhaopin.com/portal/myrd/image/popuptitle.png'); color: #3059a9; font-weight: bold; line-height: 33px; padding-left: 10px; position: relative; }
+        .popup .close { position: absolute; background: url('http://rd2.zhaopin.com/portal/myrd/image/close.png'); width: 48px; height: 23px; left: 70px; top: 5px; }
+        .popup dd { border: 1px solid #98b3de; border-top: none; background: #fff; padding: 10px; line-height: 2em; float: left; width: 282px; }
+        .popup .sel { margin-right: 10px; cursor: pointer; word-wrap: break-word; word-break: break-all; }
+        #opts_com_name { border: 1px solid #98b3de; background: #fff; line-height: 2em; }
+        #opts_com_name li { padding: 0 5px; cursor: pointer; }
+        #opts_com_name li.current { background: #3366cc; }
+        #prov_select, #city_select { padding: 0; }
+		.disable{width:150px; height:41px ;
+		  background: url(http://rd2.zhaopin.com/portal/myrd/image/sprites.png) no-repeat -174px -159px;
+		  cursor: default;
+		}
+		ul li {list-style:none;}
+		body {background:#f5f5f5;}
+		.pagecontent{width:950px; margin:0 auto;position:relative;}
+		.logo-top {position:relative;height:85px; margin-top:53px;}
+		.members {position:absolute;top:-38px;right:0;font-size:14px;}
+		.members a{ color:#810081;}
+		.logohref {position:absolute;top:11px;left:0;background:url(http://rd2.zhaopin.com/portal/myrd/image/erd_logo.png) no-repeat;width:151px;height:51px;}
+		.adcontent {font-weight:bold;background:url(http://rd2.zhaopin.com/portal/myrd/image/top_bg.png) no-repeat;height:92px;padding:131px 0 10px 26px;line-height:46px;font-size:22px;color:#503b64;}
+		.adcontent strong {font-size:28px;}
+		.adcontent p {font-family:"Microsoft YaHei";}
+		.nav {font-family:"Microsoft YaHei";width:946px;height:82px; padding-top:8px; border:1px solid #D3CECE; box-shadow:1px 1px 1px #E4E4E4;}
+		.nav .navone,.nav .navtwo,.nav .navthree {float:left;color:#555;font-weight:bold;}
+		.navone{ width:325px;}
+		.navtwo{ width:248px;margin: 0 57px 0 27px;}
+		.navthree{ width:210px;}
+		.nav li h5 {font-size:27px;font-weight:bold; float:left;width:66px;padding-left:30px; margin-right:12px; }
+		.navone h5{color:#5EC8C3;}
+		.navtwo h5{color:#EBA32C;}
+		.navthree h5{color:#A2C85E;}
+		.navone ul{border-left:2px solid #5EC8C3;margin-left: 95px;}
+		.navtwo ul{border-left:2px solid #EBA32C;margin-left: 95px;}
+		.navthree ul{border-left:2px solid #A2C85E;margin-left: 95px;}
+		
+		.navthree strong{font-size:18px;}
+		.navone ul li,.navtwo ul li,.navthree li{line-height:24px;}
+		.nav_bottom_left,.nav_bottom_right {width:344px;height:19px;position:absolute;bottom:-20px;}
+		.nav_bottom_left {left:0;background:url(image/nav_bottom_left.png) no-repeat;}
+		.nav_bottom_right {right:0;background:url(image/nav_bottom_right.png) no-repeat;}
+		.formborder {margin:0 auto;border:1px solid #d6d2d2;width:948px;}
+		.formborder h3 {font-size:14px;color:#000;background:#f4f4f4;line-height:28px;padding-left:58px;}
+		.key {padding-right:15px;}
+		#tip_compName{padding-left:20px;}
+		
+	
+		.top-h2{ font-size:25px; color:#333; text-indent:0; margin-bottom:15px;font-family:"Microsoft YaHei";font-weight:bold;}
+		
+		
+/*reg2*/
+.com-reg{width:710px; float:left;}
+.reg2-nav{ float:right;width:235px;display:table; border:none; padding-top:0px;overflow:hidden;height:auto;}
+.reg2-nav li h5 {font-size:34px;color:#B8CFEA; width:220px; clear:both; padding-left:0; margin-bottom:12px;}
+.reg2-nav ul{ border-left:5px solid #B8CFEA; width:210px; clear:both; margin-left:0; padding-left:10px;}
+.reg2-nav ul li{ font-weight:normal;}
+.reg2-nav .navtwo{ margin:0;}
+.reg2-navone,.reg2-navtwo,.reg2-navthree{ width:219px; border-bottom:1px dashed #A8A5A5; padding:45px 0 0 15px; height:175px;background:url(http://images.zhaopin.com/2012/img/right-bg.png) repeat-y;}
+.reg2-navthree{ border-bottom:none;}
+
+/*reg3*/
+.logo-top-text{ font-size:46px; color:#1E6DB5;margin:0px 0 0 170px; padding-top:8px; font-weight:bold;}
+.logo-top-text span{ color:#F26522;}		
+		
+		
+/*20150228反馈通二维码*/
+html{_text-overflow:ellipsis;}
+.ZPqrcode{width: 140px;text-align:center;padding-top:46px;height:170px;background: url(http://img01.zhaopin.cn/2014/rd2/img/qrcode3.jpg) no-repeat; position: fixed;top: 164px;left: 50%;margin-left: -625px;z-index: 10;_position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop+202));}
+.close_code{position: absolute; width: 19px;height: 19px;cursor: pointer;right: 0;top: 0;background: url(about:blank); _top: 0;z-index: 1;}
+.ZPqrcode1 a{ position:absolute; top:0; left:0;display: inline-block;width: 140px;height: 216px;}
+
+.ZPqrcode4{background: url(http://img01.zhaopin.cn/2014/rd2/img/qrcode4.jpg) no-repeat; height:188px; padding-top:0; top:400px;}
+/*20160518注册页增加提示*/
+.value{position:relative;}
+#tip_tel{position:relative;top:-12px;}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
